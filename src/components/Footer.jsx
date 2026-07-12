@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer-content">
           <p className="footer-copyright">{t.footer.copyright}</p>
           <p className="footer-built">
-            {t.footer.builtWith} <span className="footer-heart">❤️</span> {t.footer.by}
+            {t.footer.builtWith} <span className="footer-heart">💚</span> {t.footer.by}
           </p>
           <button
             onClick={scrollToTop}
