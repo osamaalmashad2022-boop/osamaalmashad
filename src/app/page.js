@@ -1,67 +1,36 @@
-'use client';
-
-import { useEffect } from 'react';
-import { LanguageProvider } from '@/context/LanguageContext';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import Certifications from '@/components/Certifications';
-import Stats from '@/components/Stats';
-import Blog from '@/components/Blog';
-import Testimonials from '@/components/Testimonials';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-
-function ScrollRevealInit() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-      elements.forEach((el) => observer.observe(el));
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-      observer.disconnect();
-    };
-  }, []);
-
-  return null;
-}
+import JsonLd from '@/components/JsonLd';
+import HomePage from './HomePage';
 
 export default function Home() {
   return (
-    <LanguageProvider>
-      <ScrollRevealInit />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Skills />
-        <Certifications />
-        <Stats />
-        <Blog />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </LanguageProvider>
+    <>
+      {/* Structured Data — Server-rendered for SEO crawlers */}
+      <JsonLd />
+
+      {/* Hidden SEO content for search engines (visually hidden, accessible to crawlers) */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0, 0, 0, 0)',
+          whiteSpace: 'nowrap',
+          borderWidth: 0,
+        }}
+      >
+        <h2>Osama Almashad — أسامة المشد</h2>
+        <p>Osama Ayman Almashad — أسامة أيمن المشد — Frontend Developer & UI/UX Expert — مطور واجهات أمامية وخبير تجربة مستخدم</p>
+        <p>Osama Ayman — أسامة أيمن — Almashad — المشد — أسامة — Osama</p>
+        <p>EdTech Specialist — Entrepreneur — Founder of Donatella — رائد أعمال — مؤسس دوناتيلا — تكنولوجيا تعليم</p>
+        <p>Damietta University — جامعة دمياط — Faculty of Education — كلية التربية</p>
+      </div>
+
+      {/* Client-side interactive content */}
+      <HomePage />
+    </>
   );
 }
