@@ -66,21 +66,36 @@ export default function Contact() {
 
             <div className="contact-details">
               <div className="contact-detail-item">
-                <div className="contact-detail-icon">📧</div>
+                <div className="contact-detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="animated-icon email-icon">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
                 <div>
                   <div className="label">Email</div>
                   <div className="value">{t.contact.info.email}</div>
                 </div>
               </div>
               <div className="contact-detail-item">
-                <div className="contact-detail-icon">📍</div>
+                <div className="contact-detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="animated-icon pin-icon">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
                 <div>
                   <div className="label">Location</div>
                   <div className="value">{t.contact.info.location}</div>
                 </div>
               </div>
               <div className="contact-detail-item">
-                <div className="contact-detail-icon">✅</div>
+                <div className="contact-detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="animated-icon status-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22,4 12,14.01 9,11.01" />
+                  </svg>
+                </div>
                 <div>
                   <div className="label">Status</div>
                   <div className="value" style={{ color: 'var(--neon-green)' }}>{t.contact.info.availability}</div>
