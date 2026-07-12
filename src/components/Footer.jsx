@@ -14,7 +14,18 @@ export default function Footer() {
         <div className="footer-content">
           <p className="footer-copyright">{t.footer.copyright}</p>
           <p className="footer-built">
-            {t.footer.builtWith} <span className="footer-heart">💚</span> {t.footer.by}
+            {t.footer.builtWith}{' '}
+            <img
+              src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f49a.png"
+              alt="💚"
+              className="footer-emoji heart-emoji"
+            />{' '}
+            {t.footer.by}{' '}
+            <img
+              src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f339.png"
+              alt="🌹"
+              className="footer-emoji rose-emoji"
+            />
           </p>
           <button
             onClick={scrollToTop}
