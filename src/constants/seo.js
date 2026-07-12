@@ -12,7 +12,7 @@ export const SITE_LOCALE_AR = "ar_EG";
 // ─── Author ──────────────────────────────────────────────────
 export const AUTHOR_NAME = "Osama Ayman Almashad";
 export const AUTHOR_NAME_AR = "أسامة أيمن المشد";
-export const AUTHOR_EMAIL = ""; // Add if you want
+export const AUTHOR_EMAIL = "osamaalmashad2022@gmail.com";
 
 // ─── Title & Description ────────────────────────────────────
 export const SITE_TITLE_DEFAULT =
