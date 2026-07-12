@@ -104,8 +104,8 @@ export default function RootLayout({ children }) {
         <meta property="og:locale:alternate" content="ar_EG" />
 
         {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
-        <link rel="apple-touch-icon" href="/images/icon-192.png" />
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
 
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
