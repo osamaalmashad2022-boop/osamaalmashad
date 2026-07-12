@@ -517,9 +517,7 @@ p {
   z-index: 1;
 }
 
-[dir="rtl"] .hero-content {
-  flex-direction: row-reverse;
-}
+
 
 .hero-text {
   flex: 1;
