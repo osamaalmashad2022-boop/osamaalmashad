@@ -1,0 +1,512 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "skills": "Skills",
+    "certifications": "Certifications",
+    "blog": "Blog",
+    "contact": "Contact",
+    "hireMe": "Hire Me",
+    "langToggle": "عربي"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Osama Almashad",
+    "roles": [
+      "Entrepreneur",
+      "Web Developer",
+      "EdTech Specialist"
+    ],
+    "description": "I build projects from scratch and turn ideas into real products. Founder of Donatella, web developer with a background in Educational Technology.",
+    "cta1": "View My Work",
+    "cta2": "Get In Touch",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "sectionSubtitle": "What got me here",
+    "title": "I start from zero — and build for the world",
+    "paragraphs": [
+      "I founded Donatella with simple resources and big ambition. I sell on the street, deal with people face to face, and learn something new every day about the market, the customer, and the product. No course teaches you what standing in front of a real customer and convincing them does. Donatella isn't just a project — it's a school where I'm both the founder and the student.",
+      "Away from the street, I sit behind a screen and build websites. Portfolio sites, stores, educational platforms — with React and Next.js, designed not just to look good, but built on a real understanding of what makes a visitor stay or leave.",
+      "My specialization in Educational Technology from Damietta University added a different dimension to my work. I understand how people learn, how their eyes move across a screen, and what makes one interface easy and another confusing. This isn't theory — it shows in every design I build."
+    ],
+    "university": "Damietta University",
+    "department": "Faculty of Education",
+    "major": "Educational Technology",
+    "year": "Class of 2026",
+    "stats": {
+      "experience": "2+",
+      "experienceLabel": "Years of Learning",
+      "certificates": "6+",
+      "certificatesLabel": "Certifications",
+      "projects": "10+",
+      "projectsLabel": "Projects Done"
+    }
+  },
+  "services": {
+    "sectionTitle": "My Services",
+    "sectionSubtitle": "What I can do for you",
+    "items": [
+      {
+        "icon": "palette",
+        "title": "UI/UX Design",
+        "description": "Creating beautiful, intuitive interfaces grounded in user research and educational psychology principles. From wireframes to high-fidelity prototypes."
+      },
+      {
+        "icon": "code",
+        "title": "Frontend Development",
+        "description": "Building responsive, performant web applications using modern technologies like React, Next.js, and vanilla JavaScript with pixel-perfect precision."
+      },
+      {
+        "icon": "cart",
+        "title": "E-Commerce Solutions",
+        "description": "End-to-end online store development with headless architecture, payment integration, and WhatsApp-powered ordering systems."
+      },
+      {
+        "icon": "education",
+        "title": "EdTech Platforms",
+        "description": "Designing and developing educational platforms with interactive learning experiences, leveraging my academic expertise in Educational Technology."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "Digital Consulting",
+        "description": "Strategic guidance for digital transformation, helping businesses establish their online presence and optimize their digital workflows."
+      },
+      {
+        "icon": "globe",
+        "title": "Portfolio Websites",
+        "description": "Crafting stunning personal and professional portfolio websites that make a lasting first impression and convert visitors into clients."
+      }
+    ]
+  },
+  "projects": {
+    "sectionTitle": "My Projects",
+    "sectionSubtitle": "Featured Works & Video Demos",
+    "featured": {
+      "tag": "Featured Graduation Project",
+      "title": "Nexora Platform",
+      "subtitle": "Intelligent Platform for Digital Resource Production",
+      "description": "An innovative learning platform for digital resource production, powered by an AI Agent to guide, facilitate, and provide personalized interactive support to learners.",
+      "tech": ["Next.js", "AI Agent", "TailwindCSS", "Node.js", "MongoDB"],
+      "liveLink": "https://www.youtube.com/watch?v=TVRpTSB3bqc",
+      "youtubeId": "TVRpTSB3bqc"
+    },
+    "items": [
+      {
+        "title": "Virtual Museums & Labs Library",
+        "category": "EdTech / Gamification",
+        "description": "A comprehensive digital library showcasing virtual museums, interactive science labs, and engaging educational games designed for modern learning.",
+        "tech": ["Unity 3D", "Web Design", "Educational Games"],
+        "liveLink": "https://www.youtube.com/watch?v=w5KDzmtielg",
+        "youtubeId": "w5KDzmtielg"
+      },
+      {
+        "title": "Educational Curricula in Quran & Sunnah",
+        "category": "Academic Research",
+        "description": "In-depth academic research on educational methodologies and curriculum designs derived from the Holy Quran and Prophet's Sunnah.",
+        "tech": ["Research", "EdTech", "Instructional Design"],
+        "liveLink": "https://www.youtube.com/watch?v=SukKEyDnzhU",
+        "youtubeId": "SukKEyDnzhU"
+      },
+      {
+        "title": "Interactive English Learning Platform",
+        "category": "Educational Web App",
+        "description": "A fully interactive educational web application designed to teach English through modern interactive drills and gamified systems.",
+        "tech": ["React", "CSS Animation", "Interactive Design"],
+        "liveLink": "https://www.youtube.com/watch?v=g4PDucMAGcQ",
+        "youtubeId": "g4PDucMAGcQ"
+      },
+      {
+        "title": "Educational Website for ChatGPT Prompting Skills",
+        "category": "Educational Web App",
+        "description": "An interactive educational website designed to teach learners how to write effective prompts for ChatGPT to maximize productivity and AI utility.",
+        "tech": ["React", "AI Prompting", "Web Development"],
+        "liveLink": "https://www.youtube.com/watch?v=iWvysMhMhsI",
+        "youtubeId": "iWvysMhMhsI"
+      },
+      {
+        "title": "Educational Website for ChatGPT Prompting Skills (V2)",
+        "category": "Educational Web App",
+        "description": "The upgraded second version of the educational website dedicated to teaching prompt engineering and AI interaction.",
+        "tech": ["React", "TailwindCSS", "AI Prompting"],
+        "liveLink": "https://www.youtube.com/watch?v=R9f56VeCqpY",
+        "youtubeId": "R9f56VeCqpY"
+      },
+      {
+        "title": "Interactive Solar System Educational Site",
+        "category": "EdTech / Interactive",
+        "description": "An interactive 3D educational website to explore the planets of the solar system and learn their characteristics in a fun and engaging way.",
+        "tech": ["Three.js", "Web Design", "Interactive Learning"],
+        "liveLink": "https://www.youtube.com/watch?v=Q3mE7i5evps",
+        "youtubeId": "Q3mE7i5evps"
+      },
+      {
+        "title": "Presentation on Instructional Packages",
+        "category": "Presentation / EdTech",
+        "description": "A comprehensive presentation explaining the concept of instructional packages, their importance, components, and how to design and use them in teaching.",
+        "tech": ["PowerPoint", "Instructional Design", "Multimedia"],
+        "liveLink": "https://www.youtube.com/watch?v=sjyqnqdBJGg",
+        "youtubeId": "sjyqnqdBJGg"
+      },
+      {
+        "title": "Brainstorming Strategy",
+        "category": "Presentation / Learning Strategies",
+        "description": "A detailed presentation on the brainstorming strategy, its rules, implementation phases, and how to activate it in educational environments.",
+        "tech": ["PowerPoint", "Active Learning", "Instructional Design"],
+        "liveLink": "https://www.youtube.com/watch?v=taEoNENAz-Q",
+        "youtubeId": "taEoNENAz-Q"
+      },
+      {
+        "title": "Meta Museum: A Virtual Tour of Ancient Egyptian Civilization",
+        "category": "EdTech / Virtual Museum",
+        "description": "An interactive 3D virtual museum simulating ancient Egyptian civilization, allowing visitors to tour and explore monuments and artifacts virtually.",
+        "tech": ["Unity 3D", "Virtual Museum", "3D Web"],
+        "liveLink": "https://www.youtube.com/watch?v=Xh8XEQZ3ros",
+        "youtubeId": "Xh8XEQZ3ros"
+      },
+      {
+        "title": "Professional Presentation Design",
+        "category": "Presentation / Visual Design",
+        "description": "A presentation showcasing the rules and standards of visual design to produce professional and impactful presentation slides that serve learning objectives.",
+        "tech": ["PowerPoint", "Visual Design", "Graphic Design"],
+        "liveLink": "https://www.youtube.com/watch?v=aoqgtkTmJP8",
+        "youtubeId": "aoqgtkTmJP8"
+      },
+      {
+        "title": "Free Course: AI Applications in Education",
+        "category": "Digital Training Course",
+        "description": "A comprehensive educational course exploring and integrating modern AI tools and applications in the educational process to develop teacher and learner performance.",
+        "tech": ["AI Tools", "EdTech Course", "E-Learning"],
+        "liveLink": "https://www.youtube.com/watch?v=1Fr2Cx8W_4E",
+        "youtubeId": "1Fr2Cx8W_4E"
+      },
+      {
+        "title": "Presentation on Self-Learning",
+        "category": "Presentation / Self-Development",
+        "description": "A presentation discussing the concept of self-learning, its importance in the digital age, and learner strategies to achieve success and independence in learning.",
+        "tech": ["PowerPoint", "Self-Learning", "Instructional Design"],
+        "liveLink": "https://www.youtube.com/watch?v=TBRf3xrZvls",
+        "youtubeId": "TBRf3xrZvls"
+      },
+      {
+        "title": "Presentation on Open Education",
+        "category": "Presentation / EdTech",
+        "description": "A detailed presentation discussing the concept of open education, its advantages, practical applications, and its role in spreading knowledge to everyone.",
+        "tech": ["PowerPoint", "Open Education", "Instructional Design"],
+        "liveLink": "https://www.youtube.com/watch?v=UoKcg7JD2RQ",
+        "youtubeId": "UoKcg7JD2RQ"
+      },
+      {
+        "title": "Palestine of Glory",
+        "category": "Multimedia Production",
+        "description": "An impactful visual and audio production expressing the resilience and history of Arab Palestine, using video editing and sound design techniques.",
+        "tech": ["National Curricula", "Video Production", "Sound Design"],
+        "liveLink": "https://www.youtube.com/watch?v=LJQ5gHUTd9c",
+        "youtubeId": "LJQ5gHUTd9c"
+      },
+      {
+        "title": "A Book on Artificial Intelligence",
+        "category": "Digital Content Production",
+        "description": "A comprehensive review and visual presentation of a book simplifying artificial intelligence concepts and its future impacts on various sectors and professions.",
+        "tech": ["AI Concepts", "Digital Design", "Video Production"],
+        "liveLink": "https://www.youtube.com/watch?v=E-ikLVr13QA",
+        "youtubeId": "E-ikLVr13QA"
+      }
+    ],
+    "viewAll": "View All Videos",
+    "viewLive": "Watch Video Demo",
+    "viewCode": "My YouTube Channel",
+    "viewCase": "Project Details"
+  },
+  "skills": {
+    "sectionTitle": "Skills & Tools",
+    "sectionSubtitle": "Technologies I work with",
+    "categories": [
+      {
+        "name": "Frontend",
+        "items": [
+          { "name": "HTML5", "level": 95 },
+          { "name": "CSS3", "level": 90 },
+          { "name": "JavaScript", "level": 85 },
+          { "name": "React", "level": 80 },
+          { "name": "Next.js", "level": 75 },
+          { "name": "TailwindCSS", "level": 85 }
+        ]
+      },
+      {
+        "name": "Design",
+        "items": [
+          { "name": "Figma", "level": 85 },
+          { "name": "Adobe XD", "level": 75 },
+          { "name": "UI Design", "level": 90 },
+          { "name": "UX Research", "level": 80 },
+          { "name": "Wireframing", "level": 85 },
+          { "name": "Prototyping", "level": 80 }
+        ]
+      },
+      {
+        "name": "Tools",
+        "items": [
+          { "name": "Git", "level": 80 },
+          { "name": "VS Code", "level": 90 },
+          { "name": "MS Office", "level": 95 },
+          { "name": "WordPress", "level": 70 }
+        ]
+      },
+      {
+        "name": "Soft Skills",
+        "items": [
+          { "name": "Problem Solving", "level": 90 },
+          { "name": "Time Management", "level": 85 },
+          { "name": "Communication", "level": 85 },
+          { "name": "Continuous Learning", "level": 95 }
+        ]
+      }
+    ]
+  },
+  "certifications": {
+    "sectionTitle": "Certifications",
+    "sectionSubtitle": "My professional credentials",
+    "items": [
+      {
+        "title": "Educational Technology - Full Specialization",
+        "issuer": "Edraak Platform",
+        "date": "January 2025",
+        "description": "Complete 4-course specialization in Educational Technology",
+        "modules": ["EdTech 1", "EdTech 2", "EdTech 3", "EdTech 4"],
+        "file": "educational_technology_edraak.png"
+      },
+      {
+        "title": "Freelancing Basics",
+        "issuer": "Mahara-Tech Platform (ITI)",
+        "date": "October 2024",
+        "description": "Certificate of completion for the Freelancing Basics course (3 hours and 8 minutes) from Mahara-Tech (Information Technology Institute).",
+        "file": "freelancing_basics_mahara_tech.png"
+      },
+      {
+        "title": "Personal Financial Planning",
+        "issuer": "Edraak Platform",
+        "date": "December 2022",
+        "description": "Personal finance management and budgeting strategies",
+        "file": "planning_finances_edraak.png"
+      },
+      {
+        "title": "Basics of Affiliate Marketing",
+        "issuer": "Albalasmeh Business Company LTD - UK",
+        "date": "December 2022",
+        "description": "Certificate of attendance for an online course in Basics of Affiliate Marketing, issued on December 16, 2022.",
+        "file": "affiliate_marketing_albalasmeh.png"
+      },
+      {
+        "title": "ICDL-Base (International Computer Driving License)",
+        "issuer": "Edraak Platform",
+        "date": "September 2022",
+        "description": "Computer Essentials, Internet & Email, Word Processing, Spreadsheets",
+        "modules": ["Computer Essentials", "Internet & Email", "MS Word", "MS Excel"],
+        "file": "icdl_edraak.png"
+      },
+      {
+        "title": "Basics of Digital Marketing",
+        "issuer": "AlqadasiBiz Platform",
+        "date": "September 2022",
+        "description": "Certificate of attendance for an online course in Basics of Digital Marketing (3 hours).",
+        "file": "digital_marketing_alqadasi.png"
+      },
+      {
+        "title": "Mathematics in Buying & Selling",
+        "issuer": "Edraak Platform",
+        "date": "August 2022",
+        "description": "Commercial mathematics, discounts, profit margins, and percentages",
+        "file": "math_buying_selling_edraak.png"
+      },
+      {
+        "title": "Time Management",
+        "issuer": "Variance Platform",
+        "date": "April 2022",
+        "description": "Professional time management and task planning strategies",
+        "file": "time_management_variance.png"
+      }
+    ],
+    "viewCertificate": "View Certificate"
+  },
+  "stats": {
+    "items": [
+      { "number": 8, "suffix": "+", "label": "Certifications" },
+      { "number": 10, "suffix": "+", "label": "Projects Done" },
+      { "number": 15, "suffix": "+", "label": "Happy Clients" },
+      { "number": 9999, "suffix": "+", "label": "Cups of Coffee" }
+    ]
+  },
+  "blog": {
+    "sectionTitle": "Latest Articles",
+    "sectionSubtitle": "Insights & thoughts",
+    "comingSoon": "Exciting content coming soon!",
+    "comingSoonDesc": "I'm working on insightful articles about Frontend Development, UI/UX Design, and Educational Technology. Stay tuned!",
+    "items": [
+      {
+        "slug": "ai-driven-personalization-in-elearning",
+        "title": "Designing Nexora: How I Built an AI-Powered Smart Platform for Digital Resource Production",
+        "excerpt": "Exploring the intersection of educational technology, cognitive engineering, and frontend architecture behind Nexora — a platform designed to bridge theory and practice.",
+        "date": "July 9, 2026",
+        "category": "AI & EdTech",
+        "readTime": "10 min read",
+        "image": "/images/blog/ai_edtech_blog.png",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "In the rapidly evolving landscape of EdTech, static instruction is no longer sufficient. Learners today face a massive 'theory-practice gap' — they understand theoretical design rules, but struggle when producing actual digital learning resources. To address this challenge, I developed **Nexora** (available at **https://zednyskill.app/**), a smart educational platform structured with a dark cyberpunk aesthetic and guided by an autonomous AI mentor. By integrating educational scaffolding with cutting-edge frontend architecture, Nexora redefines how students conceptualize, design, and produce digital learning assets."
+          },
+          {
+            "type": "heading",
+            "text": "1. The Pedagogical Foundation: Four Sequential Pillars"
+          },
+          {
+            "type": "paragraph",
+            "text": "A key challenge in digital resource production is structural coherence. Nexora organizes its learning path into four distinct, cumulative courses that guide the learner from foundational theory to interactive, game-based media:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**Conceptual Framework:** The gateway course establishes essential definitions, design standards, and theoretical bases for digital resources.",
+              "**Infographics:** Translates abstract theories into visual design, instructing students on how to structure complex educational data into aesthetic, highly readable diagrams.",
+              "**Electronic Tests:** Equips learners with the methodology to design interactive, reliable, and objective assessment instruments to evaluate learner outcomes.",
+              "**Electronic Games:** Integrates gamification principles, guiding students to develop interactive games that boost retention and student engagement through game loops and reward structures."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "2. Architecting the AI Mentor: Intelligent Scaffolding"
+          },
+          {
+            "type": "paragraph",
+            "text": "At the heart of Nexora lies the **Smart AI Mentor**, represented by an interactive, friendly virtual assistant robot. Instead of using generic chatbot prompts that provide immediate copy-paste solutions, I engineered the AI Mentor using **Adaptive Scaffolding Principles**.\n\nThrough custom system instructions and dynamic context embedding, the AI Mentor evaluates the user's progress and responds with guided, progressive hints rather than direct answers. If a student is struggling with infographic layout or test objective mappings, the AI provides conceptual pointers and diagnostic questions to stimulate critical thinking. This ensures that the learner remains active in the problem-solving loop, mirroring the presence of a real-life tutor."
+          },
+          {
+            "type": "quote",
+            "text": "Education is not the filling of a bucket, but the lighting of a fire. The AI Mentor in Nexora is engineered not to answer questions, but to inspire the reasoning required to discover those answers."
+          },
+          {
+            "type": "heading",
+            "text": "3. Visual Design & Cognitive Load: The Cyberpunk Sci-Fi Interface"
+          },
+          {
+            "type": "paragraph",
+            "text": "To maximize student engagement and prevent the 'learning fatigue' common in traditional LMS platforms, Nexora adopts a futuristic, sci-fi dark-mode interface with glowing neon green highlights. This design choice is grounded in **Cognitive Load Theory**:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "**Dark Palette:** Reduces eye strain and visual fatigue, allowing for longer, more comfortable study sessions.",
+              "**Neon Highlights:** Directs focus and visual hierarchy toward interactive elements, ensuring navigation paths are clear.",
+              "**Collapsible Interfaces:** Information is compartmentalized into collapsible navigation panels and responsive drawers, preventing visual clutter and letting students focus strictly on the task at hand."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "4. Frontend Architecture and Performance Optimization"
+          },
+          {
+            "type": "paragraph",
+            "text": "From an engineering perspective, building Nexora required a robust, highly optimized frontend. The application utilizes modern React and Next.js structures, leveraging static site generation (SSG) for static pages and client-side hydration for real-time chat interactions.\n\nUnder the scientific supervision of Dr. Bushra Salim and technical supervision of Eng. Ghada Al-Metwally, the codebase underwent rigorous performance tuning. By utilizing lazy-loaded modules, dynamic imports for heavy interactive elements, and strict asset compression, Nexora achieves lightning-fast Load Times (LCP < 1.5s), ensuring that the AI chat panel and interactive course elements load instantly on any device."
+          },
+          {
+            "type": "heading",
+            "text": "Looking Forward: The Future of Personalized Learning"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nexora demonstrates that the future of educational technology does not lie in static textbooks or video playlists, but in personalized, adaptive, and immersive ecosystems. By combining theory-driven courses, intelligent AI scaffolding, and state-of-the-art UI/UX, we can empower learners to become active producers of high-quality digital learning resources."
+          }
+        ]
+      },
+      {
+        "slug": "future-of-edtech",
+        "title": "The Future of EdTech: Blending Design with Learning",
+        "excerpt": "Exploring how UI/UX principles can revolutionize educational platforms and create more engaging learning experiences.",
+        "date": "Coming Soon",
+        "category": "EdTech",
+        "readTime": "5 min read"
+      },
+      {
+        "slug": "building-performant-ecommerce",
+        "title": "Building Performant E-Commerce with Headless Architecture",
+        "excerpt": "A deep dive into headless architecture and how it solves traditional e-commerce performance bottlenecks.",
+        "date": "Coming Soon",
+        "category": "Development",
+        "readTime": "8 min read"
+      },
+      {
+        "slug": "dark-mode-design",
+        "title": "Dark Mode Design: Beyond Just Inverting Colors",
+        "excerpt": "Best practices for designing dark mode interfaces that are beautiful, accessible, and easy on the eyes.",
+        "date": "Coming Soon",
+        "category": "Design",
+        "readTime": "6 min read"
+      }
+    ],
+    "readMore": "Read Article",
+    "share": "Copy Link",
+    "copied": "Copied!",
+    "viewAll": "View All Articles"
+  },
+  "testimonials": {
+    "sectionTitle": "Client Testimonials",
+    "sectionSubtitle": "What people say about my work",
+    "items": [
+      {
+        "name": "Ahmed Hassan",
+        "role": "Business Owner",
+        "text": "Osama delivered an exceptional website that exceeded our expectations. His attention to detail and understanding of user experience is remarkable.",
+        "rating": 5
+      },
+      {
+        "name": "Sarah Mohamed",
+        "role": "Startup Founder",
+        "text": "Working with Osama was a game-changer for our brand. He brought our vision to life with a stunning design that our customers love.",
+        "rating": 5
+      },
+      {
+        "name": "Khaled Ali",
+        "role": "Marketing Manager",
+        "text": "Professional, creative, and always delivers on time. Osama's work has significantly improved our online presence and conversion rates.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Get In Touch",
+    "sectionSubtitle": "Let's work together",
+    "heading": "Have a project in mind?",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's create something amazing together!",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "email": "osama.almashad@email.com",
+      "location": "Damietta, Egypt",
+      "availability": "Available for Freelance"
+    },
+    "social": {
+      "linkedin": "#",
+      "behance": "#",
+      "facebook": "#",
+      "whatsapp": "#",
+      "youtube": "#"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Osama Almashad. All rights reserved.",
+    "builtWith": "Designed & Built with",
+    "by": "by Osama Almashad"
+  }
+}
