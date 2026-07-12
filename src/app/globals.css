@@ -2466,3 +2466,144 @@ html[dir="rtl"] .back-btn:hover {
   margin-bottom: 24px;
 }
 
+/* ====================================
+   STATS & SERVICES SVG ANIMATIONS
+   ==================================== */
+
+/* ---- Stats Section Animations ---- */
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.stat-svg-icon {
+  color: var(--cyan);
+  transition: all var(--transition-base);
+  width: 36px;
+  height: 36px;
+}
+
+.stat-item:hover .stat-svg-icon {
+  color: var(--neon-green);
+  transform: scale(1.2);
+}
+
+.stat-item:hover .cert-icon {
+  animation: certRotate 0.8s ease-in-out;
+}
+
+.stat-item:hover .project-icon {
+  animation: projectSwing 0.6s ease-in-out;
+}
+
+.stat-item:hover .smile-icon {
+  animation: smileScale 0.8s ease-in-out;
+}
+
+.stat-item:hover .coffee-icon {
+  animation: coffeeTilt 0.8s ease-in-out;
+}
+
+@keyframes certRotate {
+  0% { transform: scale(1.2) rotate(0deg); }
+  100% { transform: scale(1.2) rotate(360deg); }
+}
+
+@keyframes projectSwing {
+  0% { transform: scale(1.2) translateY(0); }
+  25% { transform: scale(1.2) translateY(-4px) rotate(-6deg); }
+  75% { transform: scale(1.2) translateY(-4px) rotate(6deg); }
+  100% { transform: scale(1.2) translateY(0); }
+}
+
+@keyframes smileScale {
+  0% { transform: scale(1.2); }
+  50% { transform: scale(1.35); filter: drop-shadow(0 0 8px var(--neon-green-glow)); }
+  100% { transform: scale(1.2); }
+}
+
+@keyframes coffeeTilt {
+  0% { transform: scale(1.2) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(-8deg); }
+  75% { transform: scale(1.2) rotate(8deg); }
+  100% { transform: scale(1.2) rotate(0deg); }
+}
+
+/* ---- Services Section Animations ---- */
+.service-icon {
+  font-size: initial; /* Reset emoji font size */
+}
+
+.service-svg-icon {
+  color: var(--cyan);
+  transition: all var(--transition-base);
+  width: 28px;
+  height: 28px;
+}
+
+.service-card:hover .service-svg-icon {
+  color: var(--neon-green);
+}
+
+.service-card:hover .palette-icon {
+  animation: paletteRotate 1s ease-in-out;
+}
+
+.service-card:hover .code-icon {
+  animation: codeZoom 0.8s ease-in-out;
+}
+
+.service-card:hover .cart-icon {
+  animation: cartDrive 0.8s ease-in-out;
+}
+
+.service-card:hover .education-icon {
+  animation: educationFlip 0.8s ease-in-out;
+}
+
+.service-card:hover .lightbulb-icon {
+  animation: bulbGlow 1s ease-in-out infinite alternate;
+}
+
+.service-card:hover .globe-icon {
+  animation: globeSpin 1.5s linear infinite;
+}
+
+@keyframes paletteRotate {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg) scale(1.1); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes codeZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18) translateY(-2px); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cartDrive {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(-4px) rotate(-4deg); }
+  75% { transform: translateX(4px) rotate(4deg); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes educationFlip {
+  0% { transform: scale(1); }
+  40% { transform: translateY(-4px) scaleY(0.9); }
+  70% { transform: translateY(-4px) scaleY(1.1) rotate(4deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes bulbGlow {
+  0% { filter: drop-shadow(0 0 0px var(--neon-green-glow)); }
+  100% { filter: drop-shadow(0 0 8px var(--neon-green-glow)); transform: scale(1.12); }
+}
+
+@keyframes globeSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
