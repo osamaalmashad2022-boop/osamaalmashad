@@ -72,6 +72,19 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/images/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/images/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/icon.png',
+    apple: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/images/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/images/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
   verification: {
     google: GOOGLE_SITE_VERIFICATION,
   },
