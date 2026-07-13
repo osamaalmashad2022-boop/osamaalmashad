@@ -35,7 +35,7 @@ const personSchema = {
   url: SITE_URL,
   image: `${SITE_URL}${OG_IMAGE_PATH}`,
   sameAs: SAME_AS_LINKS,
-  jobTitle: "Frontend Developer & UI/UX Expert",
+  jobTitle: "Entrepreneur & Web Developer",
   description: SITE_DESCRIPTION,
   knowsAbout: [
     "Frontend Development",
@@ -77,7 +77,7 @@ const webSiteSchema = {
   url: SITE_URL,
   name: SITE_TITLE_DEFAULT,
   alternateName: [
-    `${SITE_NAME_AR} | مطور واجهات أمامية وخبير تجربة مستخدم`,
+    `${SITE_NAME_AR} | رائد أعمال ومطور ويب`,
     `${SITE_NAME} Portfolio`,
   ],
   description: SITE_DESCRIPTION,

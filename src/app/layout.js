@@ -106,8 +106,8 @@ export default function RootLayout({ children }) {
         {/* Bilingual SEO — Arabic name meta tags for search engines */}
         <meta name="author" content="Osama Ayman Almashad | أسامة أيمن المشد" />
         <meta name="subject" content="Portfolio of Osama Almashad — أسامة المشد" />
-        <meta name="abstract" content="الموقع الرسمي لأسامة أيمن المشد — مطور واجهات أمامية وخبير تجربة مستخدم. Official portfolio of Osama Almashad — Frontend Developer & UI/UX Expert." />
-        <meta name="classification" content="Portfolio, Web Development, UI/UX Design" />
+        <meta name="abstract" content="الموقع الرسمي لأسامة أيمن المشد — رائد أعمال ومطور ويب. Official portfolio of Osama Almashad — Entrepreneur & Web Developer." />
+        <meta name="classification" content="Portfolio, Web Development, Entrepreneurship" />
         <meta name="language" content="en, ar" />
         <meta name="revisit-after" content="7 days" />
         <meta name="distribution" content="global" />

@@ -23,7 +23,7 @@ export default function Home() {
         }}
       >
         <h2>Osama Almashad — أسامة المشد</h2>
-        <p>Osama Ayman Almashad — أسامة أيمن المشد — Frontend Developer & UI/UX Expert — مطور واجهات أمامية وخبير تجربة مستخدم</p>
+        <p>Osama Ayman Almashad — أسامة أيمن المشد — Entrepreneur & Web Developer — رائد أعمال ومطور ويب</p>
         <p>Osama Ayman — أسامة أيمن — Almashad — المشد — أسامة — Osama</p>
         <p>EdTech Specialist — Entrepreneur — Founder of Donatella — رائد أعمال — مؤسس دوناتيلا — تكنولوجيا تعليم</p>
         <p>Damietta University — جامعة دمياط — Faculty of Education — كلية التربية</p>

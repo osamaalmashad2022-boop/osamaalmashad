@@ -16,12 +16,12 @@ export const AUTHOR_EMAIL = "osamaalmashad2022@gmail.com";
 
 // ─── Title & Description ────────────────────────────────────
 export const SITE_TITLE_DEFAULT =
-  "Osama Almashad | أسامة المشد — Frontend Developer & UI/UX Expert";
+  "Osama Almashad | أسامة المشد — Entrepreneur & Web Developer";
 export const SITE_TITLE_TEMPLATE = "%s | Osama Almashad - أسامة المشد";
 export const SITE_DESCRIPTION =
-  "Official portfolio of Osama Ayman Almashad (أسامة أيمن المشد) — Frontend Developer, UI/UX Expert, EdTech Specialist & Entrepreneur. Founder of Donatella. Building stunning digital experiences with React & Next.js. الموقع الرسمي لأسامة أيمن المشد — مطور واجهات أمامية وخبير تجربة مستخدم ومتخصص تكنولوجيا تعليم.";
+  "Official portfolio of Osama Ayman Almashad (أسامة أيمن المشد) — Entrepreneur, Web Developer & EdTech Specialist. Founder of Donatella. Building stunning digital experiences with React & Next.js. الموقع الرسمي لأسامة أيمن المشد — رائد أعمال ومطور ويب ومتخصص تكنولوجيا تعليم.";
 export const SITE_DESCRIPTION_AR =
-  "الموقع الرسمي لأسامة أيمن المشد — مطور واجهات أمامية، خبير تصميم تجربة المستخدم، متخصص تكنولوجيا تعليم ورائد أعمال. مؤسس دوناتيلا. أبني تجارب رقمية مبهرة باستخدام React و Next.js.";
+  "الموقع الرسمي لأسامة أيمن المشد — رائد أعمال، مطور ويب، ومتخصص تكنولوجيا تعليم. مؤسس دوناتيلا. أبني تجارب رقمية مبهرة باستخدام React و Next.js.";
 
 // ─── Keywords (Arabic + English — comprehensive for search) ──
 export const SITE_KEYWORDS = [
@@ -87,7 +87,7 @@ export const OG_IMAGE_PATH = "/images/og-image.png";
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 export const OG_IMAGE_ALT =
-  "Osama Almashad — أسامة المشد | Frontend Developer & UI/UX Expert";
+  "Osama Almashad — أسامة المشد | Entrepreneur & Web Developer";
 
 // ─── Google Verification ─────────────────────────────────────
 // Replace with your actual Google Search Console verification token
