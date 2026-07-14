@@ -1,12 +1,10 @@
 'use client';
 import { useLanguage } from '@/context/LanguageContext';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Blog() {
-  const { t, isRTL } = useLanguage();
-  const router = useRouter();
+  const { t } = useLanguage();
 
   return (
     <section className="section" id="blog">
@@ -27,7 +25,6 @@ export default function Blog() {
                 style={{ 
                   transitionDelay: `${index * 0.15}s`
                 }}
-                onClick={hasContent ? () => router.push(articleUrl) : undefined}
               >
                 <div className="blog-image">
                   {article.image ? (
@@ -50,7 +47,7 @@ export default function Blog() {
                   <h4>{article.title}</h4>
                   <p>{article.excerpt}</p>
                   {hasContent ? (
-                    <Link href={articleUrl} className="blog-read-more" onClick={(e) => e.stopPropagation()}>
+                    <Link href={articleUrl} className="blog-read-more stretched-link">
                       {t.blog.readMore} →
                     </Link>
                   ) : (

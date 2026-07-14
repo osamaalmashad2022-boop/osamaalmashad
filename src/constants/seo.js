@@ -91,7 +91,10 @@ export const OG_IMAGE_ALT =
 
 // ─── Google Verification ─────────────────────────────────────
 // Replace with your actual Google Search Console verification token
-export const GOOGLE_SITE_VERIFICATION = "YOUR_GOOGLE_VERIFICATION_TOKEN";
+export const GOOGLE_SITE_VERIFICATION =
+  process.env.GOOGLE_SITE_VERIFICATION ||
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  "";
 
 // ─── Canonical URL Helper ────────────────────────────────────
 export function canonicalUrl(path) {

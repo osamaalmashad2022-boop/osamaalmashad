@@ -1,13 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function BlogListingPage() {
-  const { t, isRTL } = useLanguage();
+  const { lang, t, isRTL } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSelectedCategory('All');
+  }, [lang]);
 
   const categories = ['All', ...new Set(t.blog.items.map(item => item.category))];
 
@@ -129,7 +134,7 @@ export default function BlogListingPage() {
                 <h4>{article.title}</h4>
                 <p>{article.excerpt}</p>
                 {hasContent ? (
-                  <Link href={articleUrl} className="blog-read-more">
+                  <Link href={articleUrl} className="blog-read-more stretched-link">
                     {t.blog.readMore} →
                   </Link>
                 ) : (

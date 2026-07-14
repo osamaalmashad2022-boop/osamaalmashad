@@ -23,7 +23,7 @@ export default function sitemap() {
     .filter((item) => item.content) // Only include posts with content
     .map((post) => ({
       url: canonicalUrl(`/blog/${post.slug}`),
-      lastModified: new Date(),
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     }));

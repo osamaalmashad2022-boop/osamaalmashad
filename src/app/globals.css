@@ -4,8 +4,7 @@
    Dark Mode + Cyan/Neon Green
    ==================================== */
 
-/* ---- Google Fonts Import ---- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Changa:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+/* Google Fonts loaded via next/font/google in layout.js */
 
 /* ---- CSS Variables ---- */
 :root {
@@ -35,12 +34,12 @@
   --gradient-secondary: linear-gradient(135deg, #00f5d4 0%, #0088ff 100%);
   --gradient-bg: linear-gradient(180deg, #0a0a0f 0%, #0d0d1a 50%, #111122 100%);
 
-  /* Fonts */
-  --font-heading: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-heading-ar: 'Changa', sans-serif;
-  --font-body-ar: 'Tajawal', sans-serif;
+  /* Fonts mapped from CSS variables injected by next/font/google */
+  --font-heading: var(--font-inter), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-heading-ar: var(--font-changa), sans-serif;
+  --font-body-ar: var(--font-tajawal), sans-serif;
 
   /* Spacing */
   --section-padding: 100px 0;
@@ -76,8 +75,8 @@
 
 /* ---- RTL Arabic Font Override ---- */
 [dir="rtl"] {
-  --font-heading: 'Changa', sans-serif;
-  --font-body: 'Tajawal', sans-serif;
+  --font-heading: var(--font-changa), sans-serif;
+  --font-body: var(--font-tajawal), sans-serif;
 }
 
 /* ---- Reset & Base ---- */
@@ -1228,9 +1227,21 @@ p {
 }
 
 .blog-card {
+  position: relative;
   overflow: hidden;
   padding: 0;
 }
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
 
 .blog-image {
   width: 100%;

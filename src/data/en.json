@@ -351,6 +351,7 @@
         "title": "Designing Nexora: How I Built an AI-Powered Smart Platform for Digital Resource Production",
         "excerpt": "Exploring the intersection of educational technology, cognitive engineering, and frontend architecture behind Nexora — a platform designed to bridge theory and practice.",
         "date": "July 9, 2026",
+        "publishedAt": "2026-07-09T03:00:00+03:00",
         "category": "AI & EdTech",
         "readTime": "10 min read",
         "image": "/images/blog/ai_edtech_blog.png",
@@ -427,6 +428,7 @@
         "title": "The Future of EdTech: Blending Design with Learning",
         "excerpt": "Exploring how UI/UX principles can revolutionize educational platforms and create more engaging learning experiences.",
         "date": "Coming Soon",
+        "publishedAt": "2026-07-15T00:00:00+03:00",
         "category": "EdTech",
         "readTime": "5 min read"
       },
@@ -435,6 +437,7 @@
         "title": "Building Performant E-Commerce with Headless Architecture",
         "excerpt": "A deep dive into headless architecture and how it solves traditional e-commerce performance bottlenecks.",
         "date": "Coming Soon",
+        "publishedAt": "2026-07-15T00:00:00+03:00",
         "category": "Development",
         "readTime": "8 min read"
       },
@@ -443,6 +446,7 @@
         "title": "Dark Mode Design: Beyond Just Inverting Colors",
         "excerpt": "Best practices for designing dark mode interfaces that are beautiful, accessible, and easy on the eyes.",
         "date": "Coming Soon",
+        "publishedAt": "2026-07-15T00:00:00+03:00",
         "category": "Design",
         "readTime": "6 min read"
       }
@@ -486,10 +490,7 @@
       "email": "Your Email",
       "subject": "Subject",
       "message": "Your Message",
-      "send": "Send Message",
-      "sending": "Sending...",
-      "success": "Message sent successfully!",
-      "error": "Something went wrong. Please try again."
+      "send": "Send Message"
     },
     "info": {
       "email": "osamaalmashad2022@gmail.com",

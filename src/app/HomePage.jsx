@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { LanguageProvider } from '@/context/LanguageContext';
+import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -16,6 +16,8 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 function ScrollRevealInit() {
+  const { lang } = useLanguage();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,17 +31,13 @@ function ScrollRevealInit() {
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
 
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-      elements.forEach((el) => observer.observe(el));
-    }, 100);
+    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      clearTimeout(timer);
       observer.disconnect();
     };
-  }, []);
+  }, [lang]);
 
   return null;
 }

@@ -34,10 +34,6 @@ export function LanguageProvider({ children }) {
 
   const t = translations[lang];
 
-  if (!mounted) {
-    return <div style={{ background: '#0a0a0f', minHeight: '100vh' }} />;
-  }
-
   return (
     <LanguageContext.Provider value={{ lang, toggleLang, t, isRTL: lang === 'ar' }}>
       {children}

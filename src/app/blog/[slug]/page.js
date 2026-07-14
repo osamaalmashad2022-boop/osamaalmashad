@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
           alt: article.title,
         },
       ],
-      publishedTime: "2026-07-09T03:00:00+03:00",
+      publishedTime: article.publishedAt || "2026-07-09T03:00:00+03:00",
       authors: [AUTHOR_NAME],
     },
     twitter: {
@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }) {
         "@type": "BlogPosting",
         headline: article.title,
         description: article.excerpt,
-        datePublished: "2026-07-09T03:00:00+03:00",
+        datePublished: article.publishedAt || "2026-07-09T03:00:00+03:00",
         author: {
           "@type": "Person",
           "@id": `${SITE_URL}/#person`,

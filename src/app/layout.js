@@ -13,6 +13,42 @@ import {
   OG_IMAGE_ALT,
   GOOGLE_SITE_VERIFICATION,
 } from '@/constants/seo';
+import { Inter, JetBrains_Mono, Changa, Tajawal } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
+
+const changa = Changa({
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-changa',
+  display: 'swap',
+});
+
+const tajawal = Tajawal({
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '700', '800', '900'],
+  variable: '--font-tajawal',
+  display: 'swap',
+});
+
+export const viewport = {
+  themeColor: '#0a0a0f',
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -25,6 +61,7 @@ export const metadata = {
   authors: [{ name: AUTHOR_NAME, url: SITE_URL }],
   creator: AUTHOR_NAME,
   publisher: AUTHOR_NAME,
+  manifest: '/manifest.json',
   alternates: {
     canonical: SITE_URL,
   },
@@ -85,53 +122,25 @@ export const metadata = {
       { url: '/images/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
-  verification: {
+  verification: GOOGLE_SITE_VERIFICATION ? {
     google: GOOGLE_SITE_VERIFICATION,
-  },
+  } : undefined,
   category: 'technology',
-  other: {
-    'google-site-verification': GOOGLE_SITE_VERIFICATION,
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0a0a0f" />
-        <meta name="color-scheme" content="dark" />
         <meta name="format-detection" content="telephone=no" />
 
         {/* Bilingual SEO — Arabic name meta tags for search engines */}
         <meta name="author" content="Osama Ayman Almashad | أسامة أيمن المشد" />
-        <meta name="subject" content="Portfolio of Osama Almashad — أسامة المشد" />
-        <meta name="abstract" content="الموقع الرسمي لأسامة أيمن المشد — رائد أعمال ومطور ويب. Official portfolio of Osama Almashad — Entrepreneur & Web Developer." />
-        <meta name="classification" content="Portfolio, Web Development, Entrepreneurship" />
-        <meta name="language" content="en, ar" />
-        <meta name="revisit-after" content="7 days" />
-        <meta name="distribution" content="global" />
-        <meta name="rating" content="general" />
 
         {/* Arabic-specific Open Graph */}
         <meta property="og:locale:alternate" content="ar_EG" />
-
-        {/* Favicon */}
-        <link rel="icon" type="image/png" href="/icon.png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-
-        {/* Google Fonts — Performance optimized */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* DNS Prefetch for external resources */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
-      <body>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} ${changa.variable} ${tajawal.variable}`}>
         {children}
       </body>
     </html>

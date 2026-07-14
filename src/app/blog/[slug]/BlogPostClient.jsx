@@ -1,29 +1,88 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
 import Image from 'next/image';
 
+// Helper to parse double asterisks for bold styling
+const renderTextWithBold = (text) => {
+  return text.split('**').map((chunk, index) => {
+    return index % 2 === 1 ? <strong key={index}>{chunk}</strong> : chunk;
+  });
+};
+
 export default function BlogPostClient({ slug }) {
   const { t, isRTL } = useLanguage();
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [copied, setCopied] = useState(false);
   const contentRef = useRef(null);
+  const progressBarRef = useRef(null);
 
   // Find article
   const article = t.blog.items.find(item => item.slug === slug);
 
   // Scroll Progress Tracker for entire viewport
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateProgress = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
-      setScrollProgress(progress);
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${progress}%`;
+      }
+      ticking = false;
     };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    };
+
+    // Calculate initial progress on mount
+    updateProgress();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Memoize rendered content blocks to avoid unnecessary re-renders
+  const renderedContent = useMemo(() => {
+    if (!article) return null;
+    return article.content ? (
+      article.content.map((block, i) => {
+        if (block.type === 'paragraph') {
+          return (
+            <p key={i} className="blog-modal-p">
+              {renderTextWithBold(block.text)}
+            </p>
+          );
+        } else if (block.type === 'heading') {
+          return <h2 key={i} className="blog-modal-h4">{block.text}</h2>;
+        } else if (block.type === 'quote') {
+          return (
+            <blockquote key={i} className="blog-modal-blockquote">
+              <p>{block.text}</p>
+            </blockquote>
+          );
+        } else if (block.type === 'list') {
+          return (
+            <ul key={i} className="blog-modal-list">
+              {block.items.map((item, idx) => (
+                <li key={idx} className="blog-modal-li">
+                  {renderTextWithBold(item)}
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        return null;
+      })
+    ) : (
+      <p className="blog-modal-p">{article.excerpt}</p>
+    );
+  }, [article]);
 
   if (!article) {
     return (
@@ -43,18 +102,23 @@ export default function BlogPostClient({ slug }) {
   const handleShare = () => {
     if (typeof window === 'undefined') return;
     const link = window.location.href;
-    navigator.clipboard.writeText(link).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
+    navigator.clipboard.writeText(link)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch((err) => {
+        console.error('Failed to copy link to clipboard:', err);
+      });
   };
 
   return (
     <div className="blog-page-container">
       {/* Viewport Reading Progress Bar */}
       <div 
+        ref={progressBarRef}
         className="viewport-progress-bar" 
-        style={{ width: `${scrollProgress}%` }}
+        style={{ width: '0%' }}
       />
 
       {/* Navigation & Controls */}
@@ -112,38 +176,7 @@ export default function BlogPostClient({ slug }) {
         </h1>
         
         <div className="blog-modal-text-content stagger-item" style={{ '--item-index': 4, padding: 0 }}>
-          {article.content ? (
-            article.content.map((block, i) => {
-              if (block.type === 'paragraph') {
-                const textWithBold = block.text.split('**').map((chunk, index) => {
-                  return index % 2 === 1 ? <strong key={index}>{chunk}</strong> : chunk;
-                });
-                return <p key={i} className="blog-modal-p">{textWithBold}</p>;
-              } else if (block.type === 'heading') {
-                return <h2 key={i} className="blog-modal-h4">{block.text}</h2>;
-              } else if (block.type === 'quote') {
-                return (
-                  <blockquote key={i} className="blog-modal-blockquote">
-                    <p>{block.text}</p>
-                  </blockquote>
-                );
-              } else if (block.type === 'list') {
-                return (
-                  <ul key={i} className="blog-modal-list">
-                    {block.items.map((item, idx) => {
-                      const itemWithBold = item.split('**').map((chunk, index) => {
-                        return index % 2 === 1 ? <strong key={index}>{chunk}</strong> : chunk;
-                      });
-                      return <li key={idx} className="blog-modal-li">{itemWithBold}</li>;
-                    })}
-                  </ul>
-                );
-              }
-              return null;
-            })
-          ) : (
-            <p className="blog-modal-p">{article.excerpt}</p>
-          )}
+          {renderedContent}
         </div>
       </article>
     </div>

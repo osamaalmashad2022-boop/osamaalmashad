@@ -6,10 +6,25 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   async headers() {
+    const cspHeader = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "img-src 'self' https://img.youtube.com https://cdn.jsdelivr.net data:",
+      "frame-src https://www.youtube.com",
+      "object-src 'none'",
+      "base-uri 'self'"
+    ].join('; ');
+
     return [
       {
         source: '/(.*)',
         headers: [
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value: cspHeader,
+          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
@@ -17,10 +32,6 @@ const nextConfig = {
           {
             key: 'X-Frame-Options',
             value: 'DENY',
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
           },
           {
             key: 'Referrer-Policy',
