@@ -14,6 +14,7 @@ export function LanguageProvider({ children }) {
   useEffect(() => {
     const saved = localStorage.getItem('portfolio-lang');
     if (saved && (saved === 'en' || saved === 'ar')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLang(saved);
     }
     setMounted(true);

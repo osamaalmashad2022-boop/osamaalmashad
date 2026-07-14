@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import Image from 'next/image';
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -39,7 +40,7 @@ export default function Projects() {
                   href="https://youtube.com/@osospiracy5468" 
                   className="btn btn-outline" 
                   target="_blank" 
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   {t.projects.viewCode}
                 </a>
@@ -50,9 +51,12 @@ export default function Projects() {
               onClick={() => setActiveVideoId(featured.youtubeId)}
               style={{ cursor: 'pointer' }}
             >
-              <img 
+              <Image 
                 src={`https://img.youtube.com/vi/${featured.youtubeId}/maxresdefault.jpg`} 
                 alt={featured.title} 
+                width={800}
+                height={450}
+                unoptimized
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <div className="play-button-overlay">
@@ -79,9 +83,12 @@ export default function Projects() {
                 onClick={() => setActiveVideoId(project.youtubeId)}
                 style={{ cursor: 'pointer' }}
               >
-                <img 
+                <Image 
                   src={`https://img.youtube.com/vi/${project.youtubeId}/mqdefault.jpg`} 
                   alt={project.title} 
+                  width={320}
+                  height={180}
+                  unoptimized
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
                 <div className="play-button-overlay-small">

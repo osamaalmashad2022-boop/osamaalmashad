@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function BlogListingPage() {
   const { t, isRTL } = useLanguage();
@@ -109,7 +110,13 @@ export default function BlogListingPage() {
             >
               <div className="blog-image">
                 {article.image ? (
-                  <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    width={400}
+                    height={250}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
                 ) : (
                   <span className="blog-coming-soon">{t.blog.comingSoon}</span>
                 )}

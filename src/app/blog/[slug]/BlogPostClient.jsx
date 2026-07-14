@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function BlogPostClient({ slug }) {
   const { t, isRTL } = useLanguage();
@@ -82,7 +83,15 @@ export default function BlogPostClient({ slug }) {
       {/* Hero Image */}
       {article.image && (
         <div className="blog-modal-image-wrapper stagger-item" style={{ '--item-index': 1, borderRadius: 'var(--radius-lg)', boxShadow: '0 8px 30px rgba(0, 245, 212, 0.1)' }}>
-          <img src={article.image} alt={article.title} className="blog-modal-image" />
+          <Image
+            src={article.image}
+            alt={article.title}
+            className="blog-modal-image"
+            width={1200}
+            height={630}
+            priority
+            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          />
           <div className="blog-modal-image-overlay"></div>
         </div>
       )}

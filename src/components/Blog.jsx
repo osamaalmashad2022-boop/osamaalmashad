@@ -2,6 +2,7 @@
 import { useLanguage } from '@/context/LanguageContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Blog() {
   const { t, isRTL } = useLanguage();
@@ -30,9 +31,12 @@ export default function Blog() {
               >
                 <div className="blog-image">
                   {article.image ? (
-                    <img 
-                      src={article.image} 
-                      alt={article.title} 
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      width={400}
+                      height={250}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   ) : (
                     <span className="blog-coming-soon">{t.blog.comingSoon}</span>

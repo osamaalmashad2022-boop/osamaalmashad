@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import Image from 'next/image';
 
 export default function Certifications() {
   const { t } = useLanguage();
@@ -59,9 +60,11 @@ export default function Certifications() {
           <div className="modal-body" style={{ maxHeight: 'calc(85vh - 70px)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center', paddingBottom: '32px' }}>
             {modalCert?.file && (
               <>
-                <img
+                <Image
                   src={`/certificates/${modalCert.file}`}
                   alt={modalCert.title}
+                  width={800}
+                  height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '8px', border: '1px solid var(--border)' }}
                 />
                 <div style={{ textAlign: 'center' }}>
