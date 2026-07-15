@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
+import Preloader from '@/components/Preloader';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -42,24 +43,50 @@ function ScrollRevealInit() {
   return null;
 }
 
+function LanguageTransitionWrapper({ children }) {
+  const { lang } = useLanguage();
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentLang, setCurrentLang] = useState(lang);
+
+  useEffect(() => {
+    if (lang !== currentLang) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        setCurrentLang(lang);
+        setIsTransitioning(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [lang, currentLang]);
+
+  return (
+    <div className={`lang-transition ${isTransitioning ? 'lang-transitioning' : ''}`}>
+      {children}
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <LanguageProvider>
+      <Preloader />
       <ScrollRevealInit />
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Skills />
-        <Certifications />
-        <Stats />
-        <Blog />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
+      <LanguageTransitionWrapper>
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <Projects />
+          <Skills />
+          <Certifications />
+          <Stats />
+          <Blog />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer />
+      </LanguageTransitionWrapper>
     </LanguageProvider>
   );
 }

@@ -128,9 +128,11 @@ export const metadata = {
   category: 'technology',
 };
 
+import { Analytics } from '@vercel/analytics/react';
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         <meta name="format-detection" content="telephone=no" />
 
@@ -142,6 +144,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${changa.variable} ${tajawal.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

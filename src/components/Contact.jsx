@@ -5,6 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function Contact() {
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [submitState, setSubmitState] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -12,9 +13,20 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitState('sending');
+
     const { name, email, subject, message } = formData;
     const mailtoLink = `mailto:${t.contact.info.email}?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
-    window.open(mailtoLink);
+
+    // Small delay to show the sending state, then open mailto
+    setTimeout(() => {
+      window.open(mailtoLink);
+      setSubmitState('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      // Reset state after showing success message
+      setTimeout(() => setSubmitState('idle'), 5000);
+    }, 600);
   };
 
   const socialIcons = {
@@ -120,6 +132,17 @@ export default function Contact() {
           </div>
 
           <form className="contact-form reveal-right" onSubmit={handleSubmit}>
+            {/* Success / Error feedback */}
+            {submitState === 'success' && (
+              <div className="form-feedback form-feedback-success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22,4 12,14.01 9,11.01" />
+                </svg>
+                <span>{isRTL ? 'تم فتح تطبيق البريد! أرسل رسالتك من هناك.' : 'Email app opened! Send your message from there.'}</span>
+              </div>
+            )}
+
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">{t.contact.form.name}</label>
@@ -138,8 +161,19 @@ export default function Contact() {
               <label htmlFor="message">{t.contact.form.message}</label>
               <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
             </div>
-            <button type="submit" className="btn btn-primary form-submit">
-              {t.contact.form.send}
+            <button
+              type="submit"
+              className={`btn btn-primary form-submit ${submitState === 'sending' ? 'btn-loading' : ''}`}
+              disabled={submitState === 'sending'}
+            >
+              {submitState === 'sending' ? (
+                <>
+                  <span className="btn-spinner" />
+                  {isRTL ? 'جاري الإرسال...' : 'Sending...'}
+                </>
+              ) : (
+                t.contact.form.send
+              )}
             </button>
           </form>
         </div>
