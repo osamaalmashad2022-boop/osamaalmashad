@@ -9,6 +9,18 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
@@ -49,47 +61,68 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
-      <div className="navbar-inner">
-        <a href="#home" className="navbar-logo" onClick={(e) => handleNavClick(e, 'home')}>
-          {'<OA />'}
-        </a>
-
-        <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={activeSection === item.id ? 'active' : ''}
-              onClick={(e) => handleNavClick(e, item.id)}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="navbar-actions">
-          <button className="lang-toggle" onClick={toggleLang} aria-label="Toggle language">
-            {t.nav.langToggle}
-          </button>
-          <a
-            href="#contact"
-            className="btn btn-primary navbar-hire-btn"
-            onClick={(e) => handleNavClick(e, 'contact')}
-          >
-            {t.nav.hireMe}
+    <>
+      <div 
+        className={`mobile-overlay ${menuOpen ? 'active' : ''}`} 
+        onClick={() => setMenuOpen(false)} 
+      />
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
+        <div className="navbar-inner">
+          <a href="#home" className="navbar-logo" onClick={(e) => handleNavClick(e, 'home')}>
+            {'<OA />'}
           </a>
-          <button
-            className={`menu-toggle ${menuOpen ? 'active' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+
+          <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={activeSection === item.id ? 'active' : ''}
+                onClick={(e) => handleNavClick(e, item.id)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="mobile-only-actions">
+              <button className="lang-toggle" onClick={toggleLang} aria-label="Toggle language">
+                {t.nav.langToggle}
+              </button>
+              <a
+                href="#contact"
+                className="btn btn-primary navbar-hire-btn"
+                onClick={(e) => handleNavClick(e, 'contact')}
+                style={{ textAlign: 'center', width: '100%', justifyContent: 'center' }}
+              >
+                {t.nav.hireMe}
+              </a>
+            </div>
+          </div>
+
+          <div className="navbar-actions">
+            <div className="desktop-only-actions">
+              <button className="lang-toggle" onClick={toggleLang} aria-label="Toggle language">
+                {t.nav.langToggle}
+              </button>
+              <a
+                href="#contact"
+                className="btn btn-primary navbar-hire-btn"
+                onClick={(e) => handleNavClick(e, 'contact')}
+              >
+                {t.nav.hireMe}
+              </a>
+            </div>
+            <button
+              className={`menu-toggle ${menuOpen ? 'active' : ''}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }

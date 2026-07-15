@@ -27,6 +27,7 @@ export default function Certifications() {
               <div className="cert-dot" />
               <div className="cert-card glass-card">
                 <h4>{cert.title}</h4>
+                <span className="cert-date-mobile">{cert.date}</span>
                 <p className="cert-issuer">{cert.issuer}</p>
                 <p className="cert-description">{cert.description}</p>
                 {cert.modules && (
