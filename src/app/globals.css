@@ -440,6 +440,16 @@ p {
   gap: 16px;
 }
 
+.desktop-only-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-only-actions {
+  display: none;
+}
+
 .lang-toggle {
   padding: 6px 14px;
   border: 1px solid var(--border-light);
@@ -1618,7 +1628,7 @@ body.menu-open {
 }
 
 .footer-built {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-muted);
 }
 
@@ -1827,6 +1837,18 @@ body.menu-open {
 
   .menu-toggle {
     display: flex;
+  }
+
+  .desktop-only-actions {
+    display: none;
+  }
+
+  .mobile-only-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 16px;
   }
 
   .hero {
@@ -2719,11 +2741,13 @@ html[dir="rtl"] .back-btn:hover {
 
 /* ---- Footer Emoji Animations ---- */
 .footer-emoji {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
   vertical-align: middle;
   display: inline-block;
   margin: 0 4px;
+  line-height: 1;
   transition: transform var(--transition-base);
 }
 
