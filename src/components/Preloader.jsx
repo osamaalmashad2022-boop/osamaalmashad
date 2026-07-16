@@ -25,17 +25,24 @@ export default function Preloader() {
   if (!isLoading) return null;
 
   return (
-    <div className={`preloader ${fadeOut ? 'preloader-fade-out' : ''}`}>
-      <div className="preloader-content">
-        <div className="preloader-logo">
-          <span className="preloader-bracket">&lt;</span>
-          <span className="preloader-text">OA</span>
-          <span className="preloader-bracket"> /&gt;</span>
-        </div>
-        <div className="preloader-line">
-          <div className="preloader-line-fill" />
+    <>
+      <noscript>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .preloader { display: none !important; }
+        `}} />
+      </noscript>
+      <div className={`preloader ${fadeOut ? 'preloader-fade-out' : ''}`}>
+        <div className="preloader-content">
+          <div className="preloader-logo">
+            <span className="preloader-bracket">&lt;</span>
+            <span className="preloader-text">OA</span>
+            <span className="preloader-bracket"> /&gt;</span>
+          </div>
+          <div className="preloader-line">
+            <div className="preloader-line-fill" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

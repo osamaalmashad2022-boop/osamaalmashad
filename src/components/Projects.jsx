@@ -160,7 +160,7 @@ export default function Projects() {
                     style={{ padding: '8px 16px', fontSize: '0.8rem' }}
                     onClick={(e) => e.stopPropagation()}
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     {t.projects.viewCode}
                   </a>

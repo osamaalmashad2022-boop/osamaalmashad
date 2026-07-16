@@ -96,6 +96,13 @@ export const GOOGLE_SITE_VERIFICATION =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
   "";
 
+// ─── Bing Verification ───────────────────────────────────────
+// Replace with your actual Bing Webmaster Tools verification token
+export const BING_SITE_VERIFICATION =
+  process.env.BING_SITE_VERIFICATION ||
+  process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ||
+  "";
+
 // ─── Canonical URL Helper ────────────────────────────────────
 export function canonicalUrl(path) {
   const normalized = path.startsWith("/") ? path : `/${path}`;

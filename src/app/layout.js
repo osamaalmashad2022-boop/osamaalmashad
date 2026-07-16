@@ -12,6 +12,7 @@ import {
   OG_IMAGE_HEIGHT,
   OG_IMAGE_ALT,
   GOOGLE_SITE_VERIFICATION,
+  BING_SITE_VERIFICATION,
 } from '@/constants/seo';
 import { Inter, JetBrains_Mono, Changa, Tajawal } from 'next/font/google';
 
@@ -108,6 +109,14 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+    bingbot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: [
@@ -122,9 +131,12 @@ export const metadata = {
       { url: '/images/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
-  verification: GOOGLE_SITE_VERIFICATION ? {
-    google: GOOGLE_SITE_VERIFICATION,
-  } : undefined,
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION || undefined,
+    other: BING_SITE_VERIFICATION ? {
+      'msvalidate.01': [BING_SITE_VERIFICATION],
+    } : undefined,
+  },
   category: 'technology',
 };
 
