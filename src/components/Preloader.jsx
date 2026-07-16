@@ -6,15 +6,12 @@ export default function Preloader() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const hasVisited = sessionStorage.getItem('portfolio-preloader-shown');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (hasVisited || prefersReducedMotion) {
+    if (prefersReducedMotion) {
       const skipTimer = setTimeout(() => setIsLoading(false), 0);
       return () => clearTimeout(skipTimer);
     }
-
-    sessionStorage.setItem('portfolio-preloader-shown', 'true');
 
     // Wait for page content to be ready
     const timer = setTimeout(() => {
