@@ -19,7 +19,7 @@ export const SITE_TITLE_DEFAULT =
   "Osama Almashad | أسامة المشد — Entrepreneur & Web Developer";
 export const SITE_TITLE_TEMPLATE = "%s | Osama Almashad - أسامة المشد";
 export const SITE_DESCRIPTION =
-  "Official portfolio of Osama Ayman Almashad (أسامة أيمن المشد) — Entrepreneur, Web Developer & EdTech Specialist. Founder of Donatella. Building stunning digital experiences with React & Next.js. الموقع الرسمي لأسامة أيمن المشد — رائد أعمال ومطور ويب ومتخصص تكنولوجيا تعليم.";
+  "Portfolio of Osama Ayman Almashad (أسامة المشد) — Web Developer & EdTech Specialist. Founder of Donatella, building stunning digital experiences.";
 export const SITE_DESCRIPTION_AR =
   "الموقع الرسمي لأسامة أيمن المشد — رائد أعمال، مطور ويب، ومتخصص تكنولوجيا تعليم. مؤسس دوناتيلا. أبني تجارب رقمية مبهرة باستخدام React و Next.js.";
 
