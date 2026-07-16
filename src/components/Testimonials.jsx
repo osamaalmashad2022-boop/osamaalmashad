@@ -17,10 +17,18 @@ export default function Testimonials() {
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
   }, [items.length]);
 
+  const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
+    if (isPaused) return;
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [next, isPaused]);
+
+  const handleManualInteraction = (action) => {
+    setIsPaused(true);
+    action();
+  };
 
   // Touch / Swipe support
   const handleTouchStart = (e) => {
@@ -75,13 +83,24 @@ export default function Testimonials() {
 
         <div
           className="testimonials-carousel reveal"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+          onTouchStart={(e) => {
+            setIsPaused(true);
+            handleTouchStart(e);
+          }}
+          onTouchEnd={(e) => {
+            handleTouchEnd(e);
+            setIsPaused(false);
+          }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocus={() => setIsPaused(true)}
+          onBlur={() => setIsPaused(false)}
           ref={cardRef}
+          aria-live="polite"
         >
           <button
             className="carousel-arrow carousel-arrow-prev"
-            onClick={prev}
+            onClick={() => handleManualInteraction(prev)}
             aria-label="Previous testimonial"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
@@ -117,7 +136,7 @@ export default function Testimonials() {
 
           <button
             className="carousel-arrow carousel-arrow-next"
-            onClick={next}
+            onClick={() => handleManualInteraction(next)}
             aria-label="Next testimonial"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
@@ -130,7 +149,7 @@ export default function Testimonials() {
               <button
                 key={index}
                 className={`carousel-dot ${index === current ? 'active' : ''}`}
-                onClick={() => setCurrent(index)}
+                onClick={() => handleManualInteraction(() => setCurrent(index))}
                 aria-label={`Testimonial ${index + 1}`}
               />
             ))}

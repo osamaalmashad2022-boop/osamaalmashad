@@ -3174,6 +3174,96 @@ html[dir="rtl"] .back-btn:hover {
 }
 
 /* ====================================
+   BLOG ENHANCEMENTS
+   ==================================== */
+.blog-page-container {
+  padding-bottom: 80px;
+}
+
+.blog-page-header {
+  margin-bottom: 40px;
+}
+
+.blog-coming-soon-desc {
+  color: var(--text-muted);
+  margin-top: 12px;
+  font-size: 0.95rem;
+  max-width: 600px;
+}
+
+.blog-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(10px);
+}
+
+.blog-categories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.blog-category-btn {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.blog-category-btn.active {
+  border-color: var(--cyan);
+  background: rgba(0, 245, 212, 0.1);
+  color: var(--cyan);
+}
+
+.blog-search {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.blog-search-input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-inline-end: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: rgba(10, 10, 15, 0.8);
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.blog-search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  inset-inline-end: 16px;
+}
+
+.blog-no-items {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-muted);
+}
+
+/* ====================================
    CONTACT FORM FEEDBACK
    ==================================== */
 .form-feedback {

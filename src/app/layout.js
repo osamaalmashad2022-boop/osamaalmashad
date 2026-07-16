@@ -134,6 +134,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var savedLang = localStorage.getItem('portfolio-lang');
+                if (savedLang === 'en' || savedLang === 'ar') {
+                  document.documentElement.lang = savedLang;
+                  document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
         <meta name="format-detection" content="telephone=no" />
 
         {/* Bilingual SEO — Arabic name meta tags for search engines */}

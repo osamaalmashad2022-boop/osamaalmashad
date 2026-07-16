@@ -1,7 +1,10 @@
+import { notFound } from "next/navigation";
 import en from "@/data/en.json";
 import ar from "@/data/ar.json";
 import { SITE_URL, canonicalUrl, AUTHOR_NAME, OG_IMAGE_PATH } from "@/constants/seo";
 import BlogPostClient from "./BlogPostClient";
+
+export const dynamicParams = false;
 
 // Generate static params for all blog posts with content
 export async function generateStaticParams() {
@@ -16,11 +19,8 @@ export async function generateMetadata({ params }) {
   const article = en.blog.items.find((item) => item.slug === slug);
   const articleAr = ar.blog.items.find((item) => item.slug === slug);
 
-  if (!article) {
-    return {
-      title: "Article Not Found",
-      description: "The requested article could not be found.",
-    };
+  if (!article || !article.content) {
+    notFound();
   }
 
   const url = canonicalUrl(`/blog/${slug}`);
@@ -64,8 +64,11 @@ export default async function BlogPostPage({ params }) {
   // Build JSON-LD on the server with correct URLs
   const article = en.blog.items.find((item) => item.slug === slug);
 
-  const jsonLd = article
-    ? {
+  if (!article || !article.content) {
+    notFound();
+  }
+
+  const jsonLd = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         headline: article.title,
@@ -91,8 +94,7 @@ export default async function BlogPostPage({ params }) {
         },
         url: canonicalUrl(`/blog/${slug}`),
         keywords: article.category,
-      }
-    : null;
+      };
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -105,31 +107,25 @@ export default async function BlogPostPage({ params }) {
         name: "Blog",
         item: canonicalUrl("/blog"),
       },
-      ...(article
-        ? [
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: article.title,
-              item: canonicalUrl(`/blog/${slug}`),
-            },
-          ]
-        : []),
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: canonicalUrl(`/blog/${slug}`),
+      },
     ],
   };
 
   return (
     <>
       {/* Server-rendered JSON-LD for SEO */}
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd).replace(/</g, '\\u003c') }}
       />
       {/* Client-side interactive blog post */}
       <BlogPostClient slug={slug} />

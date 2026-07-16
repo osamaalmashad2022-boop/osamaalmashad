@@ -1,11 +1,58 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Image from 'next/image';
 
 export default function Certifications() {
   const { t } = useLanguage();
   const [modalCert, setModalCert] = useState(null);
+  const previouslyFocusedElement = useRef(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (modalCert) {
+      previouslyFocusedElement.current = document.activeElement;
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') setModalCert(null);
+        if (e.key === 'Tab' && modalRef.current) {
+          const focusableElements = modalRef.current.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          );
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              lastElement?.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              firstElement?.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      if (modalRef.current) {
+        const closeBtn = modalRef.current.querySelector('.modal-close');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      return () => {
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', handleKeyDown);
+        if (previouslyFocusedElement.current) {
+          previouslyFocusedElement.current.focus();
+        }
+      };
+    }
+  }, [modalCert]);
 
   const openModal = (cert) => {
     if (cert.file) setModalCert(cert);
@@ -53,7 +100,13 @@ export default function Certifications() {
 
       {/* Certificate Modal */}
       <div className={`modal-overlay ${modalCert ? 'active' : ''}`} onClick={closeModal}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div 
+          className="modal-content" 
+          onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          ref={modalRef}
+        >
           <div className="modal-header">
             <h4>{modalCert?.title}</h4>
             <button className="modal-close" onClick={closeModal}>✕</button>

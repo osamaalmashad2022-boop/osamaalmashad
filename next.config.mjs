@@ -6,25 +6,10 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   async headers() {
-    const cspHeader = [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",
-      "style-src 'self' 'unsafe-inline'",
-      "font-src 'self'",
-      "img-src 'self' https://img.youtube.com data:",
-      "frame-src https://www.youtube.com",
-      "object-src 'none'",
-      "base-uri 'self'"
-    ].join('; ');
-
     return [
       {
         source: '/(.*)',
         headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: cspHeader,
-          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',

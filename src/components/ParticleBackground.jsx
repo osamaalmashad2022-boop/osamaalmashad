@@ -5,20 +5,17 @@ export default function ParticleBackground() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let animationId;
     let particles = [];
     let mouse = { x: null, y: null };
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    resize();
-    window.addEventListener('resize', resize);
+    let isVisible = true;
 
     class Particle {
       constructor() {
@@ -62,10 +59,22 @@ export default function ParticleBackground() {
       }
     }
 
-    const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
-    for (let i = 0; i < count; i++) {
-      particles.push(new Particle());
-    }
+    const initParticles = () => {
+      particles = [];
+      const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    };
+
+    resize();
+    window.addEventListener('resize', resize);
 
     const connectParticles = () => {
       for (let i = 0; i < particles.length; i++) {
@@ -88,6 +97,7 @@ export default function ParticleBackground() {
     };
 
     const animate = () => {
+      if (!isVisible) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
         p.update();
@@ -109,10 +119,28 @@ export default function ParticleBackground() {
 
     window.addEventListener('mousemove', handleMouse);
     window.addEventListener('mouseleave', handleMouseLeave);
-    animate();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!isVisible) {
+              isVisible = true;
+              animate();
+            }
+          } else {
+            isVisible = false;
+            cancelAnimationFrame(animationId);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
 
     return () => {
       cancelAnimationFrame(animationId);
+      observer.disconnect();
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouse);
       window.removeEventListener('mouseleave', handleMouseLeave);

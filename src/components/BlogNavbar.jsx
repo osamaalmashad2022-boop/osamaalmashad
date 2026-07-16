@@ -91,6 +91,7 @@ export default function BlogNavbar() {
               className={`menu-toggle ${menuOpen ? 'active' : ''}`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={menuOpen}
             >
               <span />
               <span />

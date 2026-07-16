@@ -13,20 +13,15 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitState('sending');
 
     const { name, email, subject, message } = formData;
     const mailtoLink = `mailto:${t.contact.info.email}?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
-    // Small delay to show the sending state, then open mailto
-    setTimeout(() => {
-      window.open(mailtoLink);
-      setSubmitState('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    window.location.href = mailtoLink;
+    setSubmitState('success');
 
-      // Reset state after showing success message
-      setTimeout(() => setSubmitState('idle'), 5000);
-    }, 600);
+    // Reset state after showing success message
+    setTimeout(() => setSubmitState('idle'), 5000);
   };
 
   const socialIcons = {

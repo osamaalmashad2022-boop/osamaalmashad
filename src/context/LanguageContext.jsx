@@ -5,7 +5,7 @@ import ar from '@/data/ar.json';
 
 const translations = { en, ar };
 
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('en');

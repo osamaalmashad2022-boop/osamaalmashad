@@ -47,12 +47,12 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-scroll-indicator" onClick={() => scrollTo('about')} style={{ cursor: 'pointer' }}>
+      <button className="hero-scroll-indicator" onClick={() => scrollTo('about')} style={{ cursor: 'pointer', background: 'transparent', border: 'none', color: 'inherit', padding: 0 }}>
         <span>{t.hero.scrollDown}</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
-      </div>
+      </button>
     </section>
   );
 }

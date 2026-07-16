@@ -5,34 +5,26 @@ export default function TypingAnimation({ strings = [], speed = 100, deleteSpeed
   const [text, setText] = useState('');
   const [stringIndex, setStringIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const timeoutRef = useRef(null);
-
-  const tick = useCallback(() => {
-    const currentString = strings[stringIndex] || '';
-
-    if (!isDeleting) {
-      setText(currentString.substring(0, text.length + 1));
-
-      if (text.length + 1 === currentString.length) {
-        timeoutRef.current = setTimeout(() => setIsDeleting(true), pauseTime);
-        return;
-      }
-    } else {
-      setText(currentString.substring(0, text.length - 1));
-
-      if (text.length - 1 === 0) {
-        setIsDeleting(false);
-        setStringIndex((prev) => (prev + 1) % strings.length);
-        return;
-      }
-    }
-  }, [text, stringIndex, isDeleting, strings, pauseTime]);
-
   useEffect(() => {
-    const delay = isDeleting ? deleteSpeed : speed;
-    timeoutRef.current = setTimeout(tick, delay);
-    return () => clearTimeout(timeoutRef.current);
-  }, [tick, isDeleting, speed, deleteSpeed]);
+    if (!strings || strings.length === 0) return;
+
+    const currentString = strings[stringIndex] || '';
+    let timer;
+
+    if (!isDeleting && text === currentString) {
+      timer = setTimeout(() => setIsDeleting(true), pauseTime);
+    } else if (isDeleting && text === '') {
+      setIsDeleting(false);
+      setStringIndex((prev) => (prev + 1) % strings.length);
+    } else {
+      const delay = isDeleting ? deleteSpeed : speed;
+      timer = setTimeout(() => {
+        setText(currentString.substring(0, text.length + (isDeleting ? -1 : 1)));
+      }, delay);
+    }
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, stringIndex, strings, speed, deleteSpeed, pauseTime]);
 
   return (
     <span className="hero-typing">

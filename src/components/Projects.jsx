@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Image from 'next/image';
 
@@ -7,6 +7,54 @@ export default function Projects() {
   const { t } = useLanguage();
   const { featured, items } = t.projects;
   const [activeVideoId, setActiveVideoId] = useState(null);
+  const previouslyFocusedElement = useRef(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (activeVideoId) {
+      previouslyFocusedElement.current = document.activeElement;
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') setActiveVideoId(null);
+        if (e.key === 'Tab' && modalRef.current) {
+          const focusableElements = modalRef.current.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), iframe'
+          );
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              lastElement?.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              firstElement?.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      // Give focus to the close button initially
+      if (modalRef.current) {
+        const closeBtn = modalRef.current.querySelector('.video-modal-close');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      return () => {
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', handleKeyDown);
+        if (previouslyFocusedElement.current) {
+          previouslyFocusedElement.current.focus();
+        }
+      };
+    }
+  }, [activeVideoId]);
 
   return (
     <section className="section" id="projects">
@@ -136,7 +184,13 @@ export default function Projects() {
       {/* Video Lightbox Modal */}
       {activeVideoId && (
         <div className="video-modal-overlay" onClick={() => setActiveVideoId(null)}>
-          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div 
+            className="video-modal-content" 
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            ref={modalRef}
+          >
             <button className="video-modal-close" onClick={() => setActiveVideoId(null)}>×</button>
             <div className="video-iframe-container">
               <iframe

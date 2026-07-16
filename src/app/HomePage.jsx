@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
+import { LanguageProvider, useLanguage, LanguageContext } from '@/context/LanguageContext';
 import Preloader from '@/components/Preloader';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -44,24 +44,30 @@ function ScrollRevealInit() {
 }
 
 function LanguageTransitionWrapper({ children }) {
-  const { lang } = useLanguage();
+  const context = useLanguage();
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [currentLang, setCurrentLang] = useState(lang);
+  const [currentContext, setCurrentContext] = useState(context);
 
   useEffect(() => {
-    if (lang !== currentLang) {
+    if (context.lang !== currentContext.lang) {
       setIsTransitioning(true);
       const timer = setTimeout(() => {
-        setCurrentLang(lang);
+        setCurrentContext(context);
         setIsTransitioning(false);
       }, 300);
       return () => clearTimeout(timer);
     }
-  }, [lang, currentLang]);
+    
+    if (context.lang === currentContext.lang && context !== currentContext) {
+      setCurrentContext(context);
+    }
+  }, [context, currentContext]);
 
   return (
     <div className={`lang-transition ${isTransitioning ? 'lang-transitioning' : ''}`}>
-      {children}
+      <LanguageContext.Provider value={currentContext}>
+        {children}
+      </LanguageContext.Provider>
     </div>
   );
 }
