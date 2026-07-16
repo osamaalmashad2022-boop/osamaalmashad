@@ -10,8 +10,8 @@ export default function Preloader() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (hasVisited || prefersReducedMotion) {
-      setIsLoading(false);
-      return;
+      const skipTimer = setTimeout(() => setIsLoading(false), 0);
+      return () => clearTimeout(skipTimer);
     }
 
     sessionStorage.setItem('portfolio-preloader-shown', 'true');

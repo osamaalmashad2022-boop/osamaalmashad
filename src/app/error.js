@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 export default function Error({ error, reset }) {
   return (
@@ -19,9 +20,9 @@ export default function Error({ error, reset }) {
           <button onClick={reset} className="btn btn-primary">
             Try Again
           </button>
-          <a href="/" className="btn btn-outline">
+          <Link href="/" className="btn btn-outline">
             ← Back to Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

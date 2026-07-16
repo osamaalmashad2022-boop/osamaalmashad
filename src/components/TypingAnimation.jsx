@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function TypingAnimation({ strings = [], speed = 100, deleteSpeed = 50, pauseTime = 2000 }) {
   const [text, setText] = useState('');
@@ -14,8 +14,10 @@ export default function TypingAnimation({ strings = [], speed = 100, deleteSpeed
     if (!isDeleting && text === currentString) {
       timer = setTimeout(() => setIsDeleting(true), pauseTime);
     } else if (isDeleting && text === '') {
-      setIsDeleting(false);
-      setStringIndex((prev) => (prev + 1) % strings.length);
+      timer = setTimeout(() => {
+        setIsDeleting(false);
+        setStringIndex((prev) => (prev + 1) % strings.length);
+      }, 0);
     } else {
       const delay = isDeleting ? deleteSpeed : speed;
       timer = setTimeout(() => {

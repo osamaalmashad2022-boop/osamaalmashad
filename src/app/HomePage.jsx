@@ -50,16 +50,24 @@ function LanguageTransitionWrapper({ children }) {
 
   useEffect(() => {
     if (context.lang !== currentContext.lang) {
-      setIsTransitioning(true);
+      const startTimer = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 0);
       const timer = setTimeout(() => {
         setCurrentContext(context);
         setIsTransitioning(false);
       }, 300);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(startTimer);
+        clearTimeout(timer);
+      };
     }
     
     if (context.lang === currentContext.lang && context !== currentContext) {
-      setCurrentContext(context);
+      const syncTimer = setTimeout(() => {
+        setCurrentContext(context);
+      }, 0);
+      return () => clearTimeout(syncTimer);
     }
   }, [context, currentContext]);
 

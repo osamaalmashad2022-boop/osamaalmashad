@@ -15,7 +15,7 @@ export default function ParticleBackground() {
     let animationId;
     let particles = [];
     let mouse = { x: null, y: null };
-    let isVisible = true;
+    let isVisible = false;
 
     class Particle {
       constructor() {

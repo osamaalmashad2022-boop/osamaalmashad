@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import BlogCard from '@/components/BlogCard';
 
-export default function BlogListingPage() {
+export default function BlogListingClient() {
   const { lang, t, isRTL } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -23,7 +23,7 @@ export default function BlogListingPage() {
   });
 
   return (
-    <div className="container blog-page-container">
+    <div className="container blog-listing-page">
       <div className="section-header reveal revealed blog-page-header">
         <span className="section-subtitle">{t.blog.sectionSubtitle}</span>
         <h2 className="section-title">{t.blog.sectionTitle}</h2>

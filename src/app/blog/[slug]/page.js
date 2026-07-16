@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import en from "@/data/en.json";
-import ar from "@/data/ar.json";
 import { SITE_URL, canonicalUrl, AUTHOR_NAME, OG_IMAGE_PATH } from "@/constants/seo";
 import BlogPostClient from "./BlogPostClient";
 
@@ -17,7 +16,6 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const article = en.blog.items.find((item) => item.slug === slug);
-  const articleAr = ar.blog.items.find((item) => item.slug === slug);
 
   if (!article || !article.content) {
     notFound();

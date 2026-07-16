@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function Contact() {
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [submitState, setSubmitState] = useState('idle'); // idle | sending | success | error
+  const [submitState, setSubmitState] = useState('idle'); // idle | success | error
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -158,17 +158,9 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className={`btn btn-primary form-submit ${submitState === 'sending' ? 'btn-loading' : ''}`}
-              disabled={submitState === 'sending'}
+              className="btn btn-primary form-submit"
             >
-              {submitState === 'sending' ? (
-                <>
-                  <span className="btn-spinner" />
-                  {isRTL ? 'جاري الإرسال...' : 'Sending...'}
-                </>
-              ) : (
-                t.contact.form.send
-              )}
+              {t.contact.form.send}
             </button>
           </form>
         </div>

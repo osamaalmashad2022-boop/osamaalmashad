@@ -1,8 +1,8 @@
-import { canonicalUrl, SITE_NAME, SITE_NAME_AR } from '@/constants/seo';
+import { canonicalUrl } from '@/constants/seo';
 import BlogListingClient from './BlogListingClient';
 
 export const metadata = {
-  title: `Blog | ${SITE_NAME} - ${SITE_NAME_AR}`,
+  title: 'Blog',
   description: 'Read the latest articles and tutorials from Osama Almashad about web development, UI/UX design, Next.js, and more.',
   alternates: {
     canonical: canonicalUrl('/blog'),
