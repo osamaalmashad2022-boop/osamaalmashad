@@ -93,6 +93,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -171,6 +172,7 @@ p {
 .section {
   padding: var(--section-padding);
   position: relative;
+  overflow: hidden;
 }
 
 .section-header {
@@ -693,6 +695,10 @@ body.menu-open {
 }
 
 /* ---- About Section ---- */
+.about-section {
+  overflow: hidden;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1227,6 +1233,7 @@ body.menu-open {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 64px 0;
+  overflow: hidden;
 }
 
 .stats-grid {
@@ -3085,6 +3092,8 @@ html[dir="rtl"] .back-btn:hover {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  overflow: hidden;
+  padding: 0 60px;
 }
 
 .carousel-arrow {
@@ -3170,6 +3179,10 @@ html[dir="rtl"] .back-btn:hover {
 @media (max-width: 900px) {
   .carousel-arrow {
     display: none;
+  }
+
+  .testimonials-carousel {
+    padding: 0;
   }
 }
 
