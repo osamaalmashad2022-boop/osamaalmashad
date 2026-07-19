@@ -65,6 +65,11 @@ export const metadata = {
   manifest: '/manifest.json',
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      'en': SITE_URL,
+      'ar': SITE_URL,
+      'x-default': SITE_URL,
+    },
   },
   openGraph: {
     type: 'website',
@@ -166,6 +171,25 @@ export default function RootLayout({ children }) {
 
         {/* Arabic-specific Open Graph */}
         <meta property="og:locale:alternate" content="ar_EG" />
+
+        {/* Geo tags — helps with local/regional search */}
+        <meta name="geo.region" content="EG" />
+        <meta name="geo.placename" content="Damietta, Egypt" />
+        <meta name="geo.position" content="31.4175;31.8144" />
+        <meta name="ICBM" content="31.4175, 31.8144" />
+
+        {/* Dublin Core metadata — strengthens identity signals */}
+        <meta name="DC.title" content="Osama Almashad | أسامة المشد — Entrepreneur & Web Developer" />
+        <meta name="DC.creator" content="Osama Ayman Almashad" />
+        <meta name="DC.subject" content="Web Development, EdTech, Frontend, Portfolio" />
+        <meta name="DC.language" content="en,ar" />
+        <meta name="DC.type" content="InteractiveResource" />
+
+        {/* Extra SEO — catch alternate spelling searches */}
+        <meta name="subject" content="Osama Ayman Almashad Portfolio — أسامة أيمن المشد" />
+        <meta name="classification" content="Portfolio, Web Development, EdTech" />
+        <meta name="url" content="https://osamaalmashad.tech" />
+        <meta name="identifier-URL" content="https://osamaalmashad.tech" />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${changa.variable} ${tajawal.variable}`}>
         {children}

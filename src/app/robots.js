@@ -6,6 +6,19 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/api/",
+          "/_next/static/",
+          "/_next/image/",
+        ],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+      },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

@@ -19,13 +19,12 @@ export const SITE_TITLE_DEFAULT =
   "Osama Almashad | أسامة المشد — Entrepreneur & Web Developer";
 export const SITE_TITLE_TEMPLATE = "%s | Osama Almashad - أسامة المشد";
 export const SITE_DESCRIPTION =
-  "Portfolio of Osama Ayman Almashad (أسامة المشد) — Web Developer & EdTech Specialist. Founder of Donatella, building stunning digital experiences.";
+  "Official portfolio of Osama Ayman Almashad (أسامة أيمن المشد / Osama Ayman Elmeshad) — Entrepreneur, Frontend Developer & EdTech Specialist from Damietta University, Egypt. Founder of Donatella. Building stunning web experiences with React & Next.js.";
 export const SITE_DESCRIPTION_AR =
-  "الموقع الرسمي لأسامة أيمن المشد — رائد أعمال، مطور ويب، ومتخصص تكنولوجيا تعليم. مؤسس دوناتيلا. أبني تجارب رقمية مبهرة باستخدام React و Next.js.";
+  "الموقع الرسمي لأسامة أيمن المشد (Osama Ayman Almashad) — رائد أعمال، مطور ويب، ومتخصص تكنولوجيا تعليم من جامعة دمياط. مؤسس دوناتيلا. أبني تجارب رقمية مبهرة باستخدام React و Next.js.";
 
-// ─── Keywords (Arabic + English — comprehensive for search) ──
-export const SITE_KEYWORDS = [
-  // English name variations
+// ─── All Name Variations (used across Schema + keywords) ─────
+export const NAME_VARIATIONS_EN = [
   "Osama Almashad",
   "Osama Ayman Almashad",
   "Osama Ayman",
@@ -34,36 +33,102 @@ export const SITE_KEYWORDS = [
   "Osama Al Mashad",
   "Osama El Mashad",
   "Osama Elmashad",
-  // Arabic name variations
+  // Elmeshad variants (critical — requested by user)
+  "Osama Ayman Elmeshad",
+  "Osama Elmeshad",
+  "Osama El Meshad",
+  "Elmeshad",
+  "Elmashad",
+  // Hyphenated variants
+  "Osama Al-Mashad",
+  "Osama El-Mashad",
+  "Osama Al-Meshad",
+  "Osama El-Meshad",
+  // Usama alternative transliteration
+  "Usama",
+  "Usama Almashad",
+  "Usama Ayman Almashad",
+  "Usama Elmeshad",
+  "Usama Ayman Elmeshad",
+  "Usama Al Mashad",
+  // Lowercase / search-friendly
+  "osamaalmashad",
+  "osama almashad",
+];
+
+export const NAME_VARIATIONS_AR = [
   "أسامة المشد",
   "أسامة أيمن المشد",
   "أسامة أيمن",
   "أسامة",
   "المشد",
+  // Without hamza (common typo in search)
   "اسامة المشد",
   "اسامة ايمن المشد",
   "اسامة ايمن",
-  // Professional keywords
+  // With ه instead of ة (very common in search)
+  "أسامه المشد",
+  "أسامه أيمن المشد",
+  "أسامه أيمن",
+  "اسامه المشد",
+  "اسامه ايمن المشد",
+];
+
+// ─── Keywords (Arabic + English — comprehensive for search) ──
+export const SITE_KEYWORDS = [
+  // All English name variations
+  ...NAME_VARIATIONS_EN,
+  // All Arabic name variations
+  ...NAME_VARIATIONS_AR,
+  // Professional keywords — English
   "frontend developer",
+  "front end developer",
   "UI/UX designer",
   "web developer",
   "React developer",
   "Next.js developer",
   "EdTech specialist",
+  "web designer",
+  "JavaScript developer",
+  // Professional + Location keywords
+  "frontend developer Egypt",
+  "web developer Egypt",
+  "web developer Damietta",
+  "React developer Egypt",
+  "مطور ويب مصري",
+  "مطور مواقع مصر",
+  "EdTech Egypt",
+  // Professional keywords — Arabic
   "مطور واجهات أمامية",
   "مطور مواقع",
+  "مطور ويب",
   "مصمم تجربة مستخدم",
+  "مصمم مواقع",
   "تكنولوجيا تعليم",
+  "تكنولوجيا التعليم",
+  "تكنولوجيا التعليم مصر",
+  "مبرمج مواقع",
   // Brand
   "Donatella",
   "دوناتيلا",
+  "Nexora",
+  "Nexora Platform",
+  "نيكسورا",
   "portfolio",
   "بورتفوليو",
+  "osama almashad portfolio",
+  "osama portfolio",
   // Location
   "Egypt",
   "مصر",
+  "Damietta",
+  "دمياط",
   "Damietta University",
   "جامعة دمياط",
+  // Search-intent keywords
+  "osama almashad website",
+  "osama almashad tech",
+  "موقع أسامة المشد",
 ];
 
 // ─── Social Links ────────────────────────────────────────────

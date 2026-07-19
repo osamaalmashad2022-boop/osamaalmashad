@@ -1,15 +1,18 @@
 {
   "name": "Osama Almashad | أسامة المشد — Entrepreneur & Web Developer",
   "short_name": "Osama Almashad",
-  "description": "Official portfolio of Osama Ayman Almashad — Entrepreneur, Web Developer & EdTech Specialist",
+  "description": "Official portfolio of Osama Ayman Almashad (أسامة أيمن المشد) — Entrepreneur, Frontend Developer & EdTech Specialist from Damietta University, Egypt. Founder of Donatella.",
   "start_url": "/",
+  "id": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",
   "theme_color": "#0a0a0f",
   "orientation": "portrait-primary",
-  "categories": ["portfolio", "web development", "design"],
+  "categories": ["portfolio", "web development", "design", "education", "technology"],
   "lang": "en",
   "dir": "ltr",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/images/icon-192.png",

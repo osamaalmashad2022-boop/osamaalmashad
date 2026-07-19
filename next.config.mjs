@@ -5,6 +5,7 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  trailingSlash: false,
   async headers() {
     const cspHeader = [
       "default-src 'self'",
@@ -41,6 +42,14 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
         ],
       },
       {
@@ -63,8 +72,29 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Cache sitemap — allow frequent re-crawling
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=3600',
+          },
+        ],
+      },
+      {
+        // Cache robots.txt
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
     ];
   },
 };
 
 export default nextConfig;
+
