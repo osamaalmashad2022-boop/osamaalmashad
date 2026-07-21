@@ -177,8 +177,8 @@ const profilePageSchema = {
   url: SITE_URL,
   name: SITE_TITLE_DEFAULT,
   mainEntity: { "@id": `${SITE_URL}/#person` },
-  dateCreated: "2025-01-01",
-  dateModified: new Date().toISOString().split("T")[0],
+  dateCreated: "2025-01-01T00:00:00Z",
+  dateModified: new Date().toISOString(),
 };
 
 // CreativeWork Schema for Nexora (featured graduation project)
@@ -191,7 +191,7 @@ const nexoraSchema = {
     "An innovative learning platform for digital resource production, powered by an AI Agent to guide and provide personalized interactive support to learners.",
   creator: { "@id": `${SITE_URL}/#person` },
   url: "https://www.youtube.com/watch?v=TVRpTSB3bqc",
-  dateCreated: "2026",
+  dateCreated: "2026-01-01T00:00:00Z",
   keywords: [
     "Nexora",
     "AI Education",
