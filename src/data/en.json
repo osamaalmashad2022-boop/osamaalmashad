@@ -347,6 +347,58 @@
     "comingSoonDesc": "I'm working on insightful articles about Frontend Development, UI/UX Design, and Educational Technology. Stay tuned!",
     "items": [
       {
+        "slug": "from-street-to-screen-ux-lessons",
+        "title": "From Street to Screen: How Solo Entrepreneurship (Donatella) Shaped My View on UX & Web Development",
+        "excerpt": "Real-world lessons from face-to-face customer interaction and founding Donatella, and how that experience evolved into a philosophy for building web interfaces that convert attention into genuine engagement.",
+        "date": "July 22, 2026",
+        "publishedAt": "2026-07-22T03:00:00+03:00",
+        "category": "Entrepreneurship & UX Design",
+        "readTime": "7 min read",
+        "image": "/images/blog/street_to_screen_blog.png",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "When you stand on the street with a real customer in front of you, you only have a split second to grab their attention and convince them to stay. Founding **Donatella**, an artisanal dessert venture, was not just about selling sweets — it was a living laboratory for human psychology, instructional design, and interaction. I quickly discovered that what happens on the street closely mirrors what happens behind smartphone and laptop screens: website visitors possess the same short attention spans, the same hesitation, and the same visual need for clarity and trust."
+          },
+          {
+            "type": "heading",
+            "text": "1. The Street as a UX Lab: Real-Time A/B Testing"
+          },
+          {
+            "type": "paragraph",
+            "text": "In frontend engineering and UI design, we often discuss A/B testing and user behavior analytics. At Donatella, these tests took place live on the pavement: a subtle rearrangement of products on the stand or a slight tweak in the greeting pitch instantly shifted conversion rates. I learned firsthand that **simplicity and frictionless decision-making** are paramount. If a customer is overwhelmed with choices, they walk away. This principle applies directly to navigation menus, checkout flows, and layout structures in modern web applications."
+          },
+          {
+            "type": "heading",
+            "text": "2. Visual Triggers & Reducing Cognitive Load"
+          },
+          {
+            "type": "paragraph",
+            "text": "In Educational Technology, we refer to this as **'Reducing Cognitive Load'**. When visual information is structured cleanly, the brain processes it effortlessly. On the street, vibrant lighting and focal product arrangements speed up decision-making. In UI design, utilizing strong visual hierarchy, accessible contrast, and purposeful whitespace allows users to navigate intuitively without feeling overwhelmed."
+          },
+          {
+            "type": "quote",
+            "text": "Web development isn't just about writing bug-free code; it's about crafting a seamless human experience that anticipates user needs before they click a button."
+          },
+          {
+            "type": "heading",
+            "text": "3. From Instant Feedback Loops to Digital Architecture"
+          },
+          {
+            "type": "paragraph",
+            "text": "One of the greatest advantages of direct sales is unvarnished user feedback. If packaging is clumsy or presentation falls flat, you know immediately. Bringing this mindset into building applications with **React and Next.js**, I prioritize resilient user interfaces with graceful error handling and delighting micro-interactions that reassure users that the system responds instantly to their input."
+          },
+          {
+            "type": "heading",
+            "text": "4. Building from Scratch with Purpose"
+          },
+          {
+            "type": "paragraph",
+            "text": "Starting from zero imbues every milestone with true value. Building Donatella from the ground up gave me a unique holistic perspective. In digital product development, this enables me to transform abstract concepts into high-performing, responsive, and SEO-optimized web experiences. Entrepreneurship taught me that a website shouldn't just look stunning — it must serve a clear business purpose and drive real results."
+          }
+        ]
+      },
+      {
         "slug": "ai-driven-personalization-in-elearning",
         "title": "Designing Nexora: How I Built an AI-Powered Smart Platform for Digital Resource Production",
         "excerpt": "Exploring the intersection of educational technology, cognitive engineering, and frontend architecture behind Nexora, a platform bridging theory and practice.",
