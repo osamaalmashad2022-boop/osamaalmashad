@@ -2339,7 +2339,7 @@ html[dir="rtl"] .blog-modal-controls {
 .blog-modal-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   margin-bottom: 32px;
 }
@@ -2353,7 +2353,7 @@ html[dir="rtl"] .blog-modal-controls {
 .blog-modal-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 10, 15, 0) 50%, rgba(10, 10, 15, 0.95) 100%);
+  background: linear-gradient(to bottom, rgba(10, 10, 15, 0) 70%, rgba(10, 10, 15, 0.7) 100%);
 }
 
 /* Metadata */
