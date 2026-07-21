@@ -154,7 +154,7 @@ export default function BlogPostClient({ slug }) {
             width={1200}
             height={630}
             priority
-            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
           />
           <div className="blog-modal-image-overlay"></div>
         </div>
