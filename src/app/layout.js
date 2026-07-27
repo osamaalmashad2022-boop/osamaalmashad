@@ -146,6 +146,7 @@ export const metadata = {
 };
 
 import { Analytics } from '@vercel/analytics/react';
+import GoogleTranslateFix from '@/components/GoogleTranslateFix';
 
 export default function RootLayout({ children }) {
   return (
@@ -191,7 +192,8 @@ export default function RootLayout({ children }) {
         <meta name="url" content="https://osamaalmashad.tech" />
         <meta name="identifier-URL" content="https://osamaalmashad.tech" />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} ${changa.variable} ${tajawal.variable}`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} ${changa.variable} ${tajawal.variable}`} suppressHydrationWarning>
+        <GoogleTranslateFix />
         {children}
         <Analytics />
       </body>

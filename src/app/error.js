@@ -1,7 +1,42 @@
 'use client';
+import { useEffect } from 'react';
 import Link from 'next/link';
 
+// Detect if error was caused by Google Translate DOM manipulation
+function isGoogleTranslateError(error) {
+  const message = error?.message || '';
+  return (
+    message.includes('removeChild') ||
+    message.includes('insertBefore') ||
+    message.includes('The node to be removed is not a child of this node') ||
+    message.includes('NotFoundError')
+  );
+}
+
 export default function Error({ error, reset }) {
+  useEffect(() => {
+    // If it's a Google Translate error, try to auto-recover
+    if (isGoogleTranslateError(error)) {
+      console.warn(
+        '[Error Boundary] Caught Google Translate DOM error — auto-recovering...',
+        error?.message
+      );
+      // Small delay then reset to give the DOM time to stabilize
+      const timer = setTimeout(() => {
+        reset();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+
+    // Log non-translate errors
+    console.error('[Error Boundary]', error);
+  }, [error, reset]);
+
+  // Don't show error UI for Google Translate errors (auto-recovering)
+  if (isGoogleTranslateError(error)) {
+    return null;
+  }
+
   return (
     <div className="error-page">
       <div className="error-content">
