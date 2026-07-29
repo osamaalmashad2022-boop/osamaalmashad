@@ -7,9 +7,11 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   async headers() {
+    const isDev = process.env.NODE_ENV !== 'production';
+    
     const cspHeader = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",
+      `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ""}`,
       "style-src 'self' 'unsafe-inline'",
       "font-src 'self'",
       "img-src 'self' https://img.youtube.com data:",

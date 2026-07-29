@@ -38,10 +38,10 @@ export default function Hero() {
             <Image
               src="/images/profile.png"
               alt={t.hero.name}
-              width={320}
-              height={320}
+              width={340}
+              height={340}
               priority
-              style={{ objectFit: 'cover', objectPosition: 'center 30%', width: '100%', height: '100%' }}
+              style={{ objectFit: 'cover', objectPosition: 'center 25%', width: '100%', height: '100%' }}
             />
           </div>
         </div>

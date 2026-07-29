@@ -532,7 +532,7 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 120px 0 80px;
+  padding: 120px 0 120px;
   overflow: hidden;
 }
 
@@ -624,28 +624,62 @@ body.menu-open {
 .hero-image-wrapper {
   flex-shrink: 0;
   position: relative;
+  margin-bottom: 40px;
 }
 
 .hero-image-container {
-  width: 320px;
-  height: 320px;
-  border-radius: var(--radius-full);
+  width: 340px;
+  height: 340px;
   overflow: hidden;
   position: relative;
-  border: 3px solid transparent;
-  background-image: var(--gradient-primary);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border: 3px solid rgba(0, 255, 200, 0.4);
+  animation: blobMorph 8s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(0,255,200,0.15), rgba(0,200,255,0.1));
+  transition: border-color 0.3s ease;
+}
+
+.hero-image-container:hover {
+  border-color: rgba(0, 255, 200, 0.7);
 }
 
 .hero-image-container::before {
   content: '';
   position: absolute;
-  inset: -4px;
-  border-radius: var(--radius-full);
-  background: var(--gradient-primary);
+  inset: -6px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(0, 255, 200, 0.6),
+    rgba(0, 200, 255, 0.4),
+    rgba(50, 255, 150, 0.6),
+    rgba(0, 255, 200, 0.2),
+    rgba(0, 200, 255, 0.6)
+  );
   z-index: -1;
-  animation: rotateGlow 4s linear infinite;
+  animation: blobMorph 8s ease-in-out infinite, spinBorder 4s linear infinite;
+  filter: blur(6px);
+}
+
+@keyframes blobMorph {
+  0% {
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  }
+  25% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  50% {
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  }
+  75% {
+    border-radius: 30% 70% 40% 60% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  }
+}
+
+@keyframes spinBorder {
+  0% { filter: blur(6px) hue-rotate(0deg); }
+  100% { filter: blur(6px) hue-rotate(360deg); }
 }
 
 @keyframes rotateGlow {
@@ -655,23 +689,27 @@ body.menu-open {
 
 .hero-image-glow {
   position: absolute;
-  inset: -20px;
-  border-radius: var(--radius-full);
-  background: var(--gradient-primary);
-  filter: blur(40px);
-  opacity: 0.3;
-  animation: pulseGlow 3s ease-in-out infinite;
+  inset: -30px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 200, 0.25) 0%,
+    rgba(0, 200, 255, 0.15) 40%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  opacity: 0.5;
+  animation: blobMorph 8s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
   z-index: -2;
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.05); }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
 }
 
 .hero-scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -681,6 +719,7 @@ body.menu-open {
   color: var(--text-muted);
   font-size: 0.8rem;
   animation: scrollBounce 2s ease-in-out infinite;
+  z-index: 2;
 }
 
 .hero-scroll-indicator svg {
@@ -1767,8 +1806,12 @@ body.menu-open {
   }
 
   .hero-image-container {
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-image-wrapper {
+    margin-bottom: 30px;
   }
 
   .about-content {
@@ -1859,7 +1902,7 @@ body.menu-open {
   }
 
   .hero {
-    padding: 100px 0 60px;
+    padding: 100px 0 100px;
   }
 
   .hero-name {
@@ -1872,8 +1915,12 @@ body.menu-open {
   }
 
   .hero-image-container {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-image-wrapper {
+    margin-bottom: 20px;
   }
 
   .services-grid {
