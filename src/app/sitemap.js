@@ -49,7 +49,7 @@ export default function sitemap() {
         url,
         lastModified: post.publishedAt ? new Date(post.publishedAt) : new Date(),
         changeFrequency: "monthly",
-        priority: 0.6,
+        priority: 0.7,
         alternates: {
           languages: {
             en: url,

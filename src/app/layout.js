@@ -167,6 +167,9 @@ export default function RootLayout({ children }) {
         />
         <meta name="format-detection" content="telephone=no" />
 
+        {/* RSS Feed autodiscovery for blog aggregators */}
+        <link rel="alternate" type="application/rss+xml" title="Osama Almashad Blog" href="/feed.xml" />
+
         {/* Bilingual SEO — Arabic name meta tags for search engines */}
         <meta name="author" content="Osama Ayman Almashad | أسامة أيمن المشد" />
 

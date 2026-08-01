@@ -161,23 +161,33 @@ export default function BlogPostClient({ slug }) {
       )}
 
       {/* Main Article Content */}
-      <article ref={contentRef}>
-        <div className="blog-modal-header-info stagger-item" style={{ '--item-index': 2, padding: 0 }}>
-          <span className="blog-modal-category">{article.category}</span>
-          <div className="blog-modal-meta-row">
-            <span>{article.date}</span>
-            <span className="separator">•</span>
-            <span>{article.readTime}</span>
+      <article ref={contentRef} itemScope itemType="https://schema.org/BlogPosting">
+        <header>
+          <div className="blog-modal-header-info stagger-item" style={{ '--item-index': 2, padding: 0 }}>
+            <span className="blog-modal-category" itemProp="articleSection">{article.category}</span>
+            <div className="blog-modal-meta-row">
+              <time dateTime={article.publishedAt || ''} itemProp="datePublished">{article.date}</time>
+              <span className="separator">•</span>
+              <span>{article.readTime}</span>
+            </div>
           </div>
-        </div>
+          
+          <h1 className="blog-modal-title stagger-item" style={{ '--item-index': 3, padding: '16px 0', fontSize: '2.4rem' }} itemProp="headline">
+            {article.title}
+          </h1>
+        </header>
         
-        <h1 className="blog-modal-title stagger-item" style={{ '--item-index': 3, padding: '16px 0', fontSize: '2.4rem' }}>
-          {article.title}
-        </h1>
-        
-        <div className="blog-modal-text-content stagger-item" style={{ '--item-index': 4, padding: 0 }}>
+        <section className="blog-modal-text-content stagger-item" style={{ '--item-index': 4, padding: 0 }} itemProp="articleBody">
           {renderedContent}
-        </div>
+        </section>
+
+        {/* Hidden author microdata for crawlers */}
+        <footer className="sr-only" aria-hidden="true">
+          <span itemProp="author" itemScope itemType="https://schema.org/Person">
+            <meta itemProp="name" content="Osama Ayman Almashad" />
+            <meta itemProp="url" content="https://osamaalmashad.tech" />
+          </span>
+        </footer>
       </article>
     </div>
   );
