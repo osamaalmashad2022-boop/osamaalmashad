@@ -113,16 +113,30 @@ function SemanticSEOContent() {
       <h2>Osama Ayman Almashad — أسامة أيمن المشد</h2>
       <p>
         Also known as: Osama Elmeshad, Osama Al Mashad, Osama El Meshad,
-        Usama Almashad, أسامه المشد, اسامة المشد, اسامه ايمن المشد.
+        Usama Almashad, Usama Ayman Almashad, Usama Elmeshad, Usama Al Mashad,
+        Osamah Almashad, Ossama Almashad, Osama Almshad, Osama Almeshad,
+        Osama Al-Mashad, Osama El-Mashad, Osama Al-Meshad, Osama El-Meshad,
+        أسامه المشد, اسامة المشد, اسامه ايمن المشد, أسامة ايمن المشد,
+        اسامه أيمن المشد, أسامة المشّد, المشد أسامة, المشد اسامة,
+        مشد أسامة, أسامة مشد.
       </p>
       <p>
-        Entrepreneur, Frontend Web Developer, and Educational Technology Specialist
-        from Damietta University, Egypt. Founder of Donatella.
+        Entrepreneur, Frontend Web Developer, Freelance React Developer,
+        Next.js Developer, JavaScript Developer, UI/UX Designer,
+        and Educational Technology Specialist
+        from Damietta University (Dumyat / Domyat / Dimyat), Egypt.
+        Founder of Donatella (دوناتيلا / دوناتلا / دونتيلا).
         Building modern web applications with React and Next.js.
       </p>
       <p>
         رائد أعمال ومطور واجهات أمامية ومتخصص تكنولوجيا تعليم من جامعة دمياط، مصر.
-        مؤسس دوناتيلا. يبني تطبيقات ويب حديثة باستخدام React و Next.js.
+        مؤسس دوناتيلا. مبرمج مواقع. مصمم واجهات. مطور فرونت اند.
+        مطور ريأكت. مطور نكست جي اس. مصمم تجربة مستخدم.
+        يبني تطبيقات ويب حديثة باستخدام React و Next.js.
+      </p>
+      <p>
+        Nexora Platform (نيكسورا / نكسورا / neksoura / neksora) — zednyskill.app —
+        An innovative AI-powered learning platform for digital resource production.
       </p>
     </div>
   );

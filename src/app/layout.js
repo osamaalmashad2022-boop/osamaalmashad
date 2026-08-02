@@ -185,13 +185,14 @@ export default function RootLayout({ children }) {
         {/* Dublin Core metadata — strengthens identity signals */}
         <meta name="DC.title" content="Osama Almashad | أسامة المشد — Entrepreneur & Web Developer" />
         <meta name="DC.creator" content="Osama Ayman Almashad" />
-        <meta name="DC.subject" content="Web Development, EdTech, Frontend, Portfolio" />
+        <meta name="DC.subject" content="Web Development, EdTech, Frontend, Portfolio, React, Next.js, Freelance Developer, UI/UX Design, Educational Technology, Donatella, Nexora, Damietta, Egypt" />
         <meta name="DC.language" content="en,ar" />
         <meta name="DC.type" content="InteractiveResource" />
 
         {/* Extra SEO — catch alternate spelling searches */}
-        <meta name="subject" content="Osama Ayman Almashad Portfolio — أسامة أيمن المشد" />
-        <meta name="classification" content="Portfolio, Web Development, EdTech" />
+        <meta name="subject" content="Osama Ayman Almashad Portfolio — أسامة أيمن المشد — Osama Elmeshad — Usama Almashad — اسامة المشد — أسامه المشد" />
+        <meta name="abstract" content="Portfolio of Osama Almashad (Osama Elmeshad / أسامة المشد / اسامة المشد / أسامه المشد) — Entrepreneur, Frontend Developer, EdTech Specialist from Damietta (Dumyat / Domyat), Egypt. Founder of Donatella (دوناتيلا). Creator of Nexora Platform (نيكسورا)." />
+        <meta name="classification" content="Portfolio, Web Development, EdTech, Freelance, React Developer, Frontend Developer" />
         <meta name="url" content="https://osamaalmashad.tech" />
         <meta name="identifier-URL" content="https://osamaalmashad.tech" />
       </head>
